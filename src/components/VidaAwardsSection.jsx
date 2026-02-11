@@ -1,0 +1,124 @@
+import { Trophy, Star, Medal, ArrowRight } from "lucide-react";
+
+export default function VidaAwardsSection() {
+  const awards = [
+    {
+      icon: <Star size={34} />,
+      title: "Hall of Fame",
+      text: "Honoring professionals who made outstanding contributions to healthcare quality and patient safety.",
+      pos: "lg:translate-y-10",
+    },
+    {
+      icon: <Trophy size={38} />,
+      title: "VIDA Awards",
+      text: "Recognizing institutions and leaders driving excellence in healthcare standards.",
+      pos: "lg:-translate-y-10",
+      highlight: true,
+    },
+    {
+      icon: <Medal size={34} />,
+      title: "Contest Winners",
+      text: "Celebrating winners of VIDA competitions showcasing innovation and impact.",
+      pos: "lg:translate-y-16",
+    },
+  ];
+
+  return (
+    <section className="py-36 relative overflow-hidden bg-gradient-to-b from-white via-brandBlue/5 to-white">
+
+      {/* LOGO THEME BACKGROUND GLOWS */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-20 left-1/4 w-[700px] h-[700px] bg-brandBlue/20 blur-[180px] rounded-full" />
+        <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-brandRed/20 blur-[180px] rounded-full" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* HEADER */}
+        <div className="text-center mb-28">
+          <span className="text-brandRed uppercase tracking-[6px] font-semibold">
+            VIDA Recognition
+          </span>
+
+          <h2 className="text-5xl md:text-6xl font-bold text-brandBlue mt-6">
+            Awards & Achievements
+          </h2>
+
+          <p className="text-gray-600 mt-6 max-w-2xl mx-auto text-lg">
+            Celebrating excellence, leadership and innovation in
+            healthcare quality and patient safety.
+          </p>
+        </div>
+
+        {/* ORB LAYOUT */}
+        <div className="relative flex flex-col lg:flex-row items-center justify-center gap-20">
+
+          {awards.map((item, i) => (
+            <div
+              key={i}
+              className={`group relative max-w-sm text-center ${item.pos}`}
+            >
+
+              {/* LOGO THEME GLOW RING */}
+              <div
+                className={`
+                  absolute inset-0 -z-10 blur-3xl opacity-60 rounded-full
+                  ${
+                    item.highlight
+                      ? "bg-gradient-to-r from-brandRed/40 to-brandBlue/40"
+                      : "bg-gradient-to-r from-brandBlue/30 to-brandRed/30"
+                  }
+                `}
+              />
+
+              {/* FLOATING ICON ORB */}
+              <div
+                className={`
+                  w-28 h-28 mx-auto
+                  flex items-center justify-center
+                  rounded-full
+                  backdrop-blur-xl
+                  border border-white/40
+                  shadow-xl
+                  transition duration-500
+                  group-hover:scale-110 group-hover:rotate-6
+                  ${
+                    item.highlight
+                      ? "bg-gradient-to-br from-brandRed/10 to-brandBlue/10 text-brandRed"
+                      : "bg-white/60 text-brandBlue"
+                  }
+                `}
+              >
+                {item.icon}
+              </div>
+
+              {/* TITLE */}
+              <h3 className="text-2xl font-bold text-brandBlue mt-8">
+                {item.title}
+              </h3>
+
+              {/* TEXT */}
+              <p className="text-gray-600 mt-4 leading-relaxed">
+                {item.text}
+              </p>
+
+              {/* CTA */}
+              <button
+                className="
+                  inline-flex items-center gap-2
+                  text-brandRed font-semibold mt-6
+                  group-hover:gap-4 transition-all
+                "
+              >
+                Explore <ArrowRight size={18} />
+              </button>
+
+            </div>
+          ))}
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
