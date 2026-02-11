@@ -11,7 +11,6 @@ import {
 export default function ProgramsMembership() {
   const sliderRef = useRef(null);
 
-  // MANUAL SCROLL
   const scroll = (dir) => {
     if (!sliderRef.current) return;
 
@@ -21,7 +20,6 @@ export default function ProgramsMembership() {
     });
   };
 
-  // AUTO SLIDE
   useEffect(() => {
     const slider = sliderRef.current;
 
@@ -44,20 +42,24 @@ export default function ProgramsMembership() {
   return (
     <section className="relative py-24 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-red-50">
 
-      {/* BLOBS — BRAND COLORS */}
+      {/* BLOBS */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-brandBlue/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-brandRed/10 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 relative z-10">
 
-        {/* LEFT — MEMBERSHIP */}
-        <div>
+        {/* LEFT — DARK MEMBERSHIP */}
+        <div className="relative rounded-3xl p-10 bg-gradient-to-br from-[#0B1C2D] via-[#102A43] to-[#0B1C2D] text-white shadow-2xl overflow-hidden">
 
-          <h2 className="text-4xl font-bold text-brandBlue mb-10">
+          {/* dark glow accents */}
+          <div className="absolute -top-20 -left-20 w-60 h-60 bg-brandBlue/30 blur-[120px] rounded-full"></div>
+          <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-brandRed/30 blur-[120px] rounded-full"></div>
+
+          <h2 className="text-4xl font-bold mb-10 relative z-10">
             VIDA Membership
           </h2>
 
-          <div className="space-y-6">
+          <div className="space-y-6 relative z-10">
             <MemberCard icon={<Users />} title="Institutions" text="Hospitals & colleges" />
             <MemberCard icon={<Microscope />} title="Diagnostics" text="Labs & imaging" />
             <MemberCard icon={<CalendarDays />} title="Professionals" text="Quality leaders" />
@@ -66,7 +68,7 @@ export default function ProgramsMembership() {
 
         </div>
 
-        {/* RIGHT — PROGRAM TIMELINE */}
+        {/* RIGHT — PROGRAMS (LIGHT) */}
         <div>
 
           <div className="flex justify-between items-center mb-8">
@@ -142,22 +144,23 @@ function ProgramCard({ place, title, date }) {
   );
 }
 
+/* DARK MEMBER CARD */
 function MemberCard({ icon, title, text }) {
   return (
-    <div className="group p-[2px] rounded-2xl bg-gradient-to-br from-brandBlue to-brandRed hover:scale-105 transition">
+    <div className="group p-[1px] rounded-2xl bg-gradient-to-br from-brandBlue/40 to-brandRed/40">
 
-      <div className="bg-white rounded-2xl p-8 text-left flex gap-4 items-center">
+      <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 flex gap-4 items-center border border-white/10 hover:bg-white/20 transition">
 
         <div className="text-brandRed">
           {icon}
         </div>
 
         <div>
-          <h3 className="font-semibold text-lg text-gray-800">
+          <h3 className="font-semibold text-lg text-white">
             {title}
           </h3>
 
-          <p className="text-gray-600 text-sm mt-1">
+          <p className="text-gray-300 text-sm mt-1">
             {text}
           </p>
         </div>

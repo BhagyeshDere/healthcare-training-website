@@ -24,12 +24,19 @@ export default function VidaAwardsSection() {
   ];
 
   return (
-    <section className="py-36 relative overflow-hidden bg-gradient-to-b from-white via-brandBlue/5 to-white">
+    <section className="py-36 relative overflow-hidden bg-gradient-to-b from-[#F8FBFF] via-white to-[#F9FAFF]">
 
-      {/* LOGO THEME BACKGROUND GLOWS */}
+      {/* PREMIUM LOGO-THEME BACKGROUND */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-1/4 w-[700px] h-[700px] bg-brandBlue/20 blur-[180px] rounded-full" />
-        <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-brandRed/20 blur-[180px] rounded-full" />
+
+        {/* large soft mesh glow */}
+        <div className="absolute top-10 left-1/4 w-[900px] h-[900px] bg-brandBlue/15 blur-[220px] rounded-full" />
+
+        <div className="absolute bottom-0 right-1/4 w-[900px] h-[900px] bg-brandRed/15 blur-[220px] rounded-full" />
+
+        {/* subtle center lighting */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.7),transparent_70%)]" />
+
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
@@ -59,7 +66,7 @@ export default function VidaAwardsSection() {
               className={`group relative max-w-sm text-center ${item.pos}`}
             >
 
-              {/* LOGO THEME GLOW RING */}
+              {/* GLOW RING */}
               <div
                 className={`
                   absolute inset-0 -z-10 blur-3xl opacity-60 rounded-full
@@ -71,7 +78,7 @@ export default function VidaAwardsSection() {
                 `}
               />
 
-              {/* FLOATING ICON ORB */}
+              {/* ICON ORB */}
               <div
                 className={`
                   w-28 h-28 mx-auto
@@ -85,7 +92,7 @@ export default function VidaAwardsSection() {
                   ${
                     item.highlight
                       ? "bg-gradient-to-br from-brandRed/10 to-brandBlue/10 text-brandRed"
-                      : "bg-white/60 text-brandBlue"
+                      : "bg-white/70 text-brandBlue"
                   }
                 `}
               >

@@ -8,20 +8,41 @@ import VidaAcademy from "../components/VidaAcademy";
 import EventsSection from "../components/EventsSection";
 import LibrarySection from "../components/LibrarySection";
 import VidaAwardsSection from "../components/VidaAwardsSection";
+import VidaResourcesSection from "../components/VidaResourcesSection";
+import VidaConnectSection from "../components/VidaConnectSection"; // ✅ NEW SECTION
 import Footer from "../components/Footer";
 
-/* ANIMATION VARIANTS */
+/* PREMIUM ANIMATION VARIANTS */
 const sectionVariant = {
-  hidden: { opacity: 0, y: 60 },
+  hidden: {
+    opacity: 0,
+    y: 80,
+    scale: 0.96,
+    filter: "blur(6px)",
+  },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
+    filter: "blur(0px)",
     transition: {
       duration: 0.9,
-      ease: "easeOut",
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
+
+/* Reusable wrapper */
+const MotionSection = ({ children }) => (
+  <motion.div
+    variants={sectionVariant}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+  >
+    {children}
+  </motion.div>
+);
 
 export default function Home() {
   return (
@@ -31,89 +52,55 @@ export default function Home() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-
       {/* HERO */}
       <HeroSlider />
 
-      {/* ABOUT + STATS */}
-      <motion.div
-        variants={sectionVariant}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      <MotionSection>
         <AboutStats />
-      </motion.div>
+      </MotionSection>
 
-      {/* INTRO VIDEO */}
-      <motion.div
-        variants={sectionVariant}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      <MotionSection>
         <IntroVideo />
-      </motion.div>
+      </MotionSection>
 
-      {/* PROGRAMS & MEMBERSHIP */}
-      <motion.div
-        variants={sectionVariant}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      <MotionSection>
         <ProgramsMembership />
-      </motion.div>
+      </MotionSection>
 
-      {/* VIDA ACADEMY */}
-      <motion.div
-        variants={sectionVariant}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      <MotionSection>
         <VidaAcademy />
-      </motion.div>
+      </MotionSection>
 
-      {/* EVENTS */}
-      <motion.div
-        variants={sectionVariant}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      <MotionSection>
         <EventsSection />
-      </motion.div>
+      </MotionSection>
 
-      {/* VIDA LIBRARY */}
-      <motion.div
-        variants={sectionVariant}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      <MotionSection>
         <LibrarySection />
-      </motion.div>
+      </MotionSection>
 
-      {/* VIDA AWARDS */}
-      <motion.div
-        variants={sectionVariant}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      <MotionSection>
         <VidaAwardsSection />
-      </motion.div>
+      </MotionSection>
+
+      <MotionSection>
+        <VidaResourcesSection />
+      </MotionSection>
+
+      {/* ✅ VIDA CONNECT / COLLAB SECTION */}
+      <MotionSection>
+        <VidaConnectSection />
+      </MotionSection>
 
       {/* FOOTER */}
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
       >
         <Footer />
       </motion.div>
-
     </motion.main>
   );
 }

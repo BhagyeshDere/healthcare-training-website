@@ -22,9 +22,9 @@ export default function LibrarySection() {
   ];
 
   return (
-    <section className="relative py-36 overflow-hidden bg-gradient-to-b from-white via-brandBlue/5 to-brandRed/5">
+    <section className="relative py-36 overflow-hidden bg-gradient-to-b from-[#071A2F] via-[#0B2A4A] to-[#071A2F] text-white">
 
-      {/* UPDATED BACKGROUND GLOW (LOGO THEME) */}
+      {/* DARK GLOW BACKGROUND */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-brandBlue/20 blur-[220px] rounded-full" />
         <div className="absolute bottom-0 right-1/4 w-[800px] h-[800px] bg-brandRed/20 blur-[220px] rounded-full" />
@@ -38,11 +38,11 @@ export default function LibrarySection() {
             VIDA Library
           </span>
 
-          <h2 className="text-5xl md:text-6xl font-bold text-brandBlue mt-6">
+          <h2 className="text-5xl md:text-6xl font-bold mt-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             Knowledge Ecosystem
           </h2>
 
-          <p className="text-gray-600 mt-6 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-300 mt-6 max-w-2xl mx-auto text-lg">
             A premium collection of healthcare knowledge resources,
             publications and professional learning materials.
           </p>
@@ -65,7 +65,7 @@ export default function LibrarySection() {
         </div>
 
         {/* EXPLORE RESOURCES */}
-        <h3 className="text-4xl md:text-5xl font-bold text-brandBlue text-center mb-20">
+        <h3 className="text-4xl md:text-5xl font-bold text-center mb-20">
           Explore Resources
         </h3>
 
@@ -78,27 +78,29 @@ export default function LibrarySection() {
                 group flex items-center gap-5
                 px-10 py-6
                 rounded-full
-                bg-white/90 backdrop-blur-xl
-                shadow-lg
-                hover:shadow-2xl
+                bg-white/10 backdrop-blur-xl
+                border border-white/10
+                hover:bg-white/20
+                hover:border-white/20
                 hover:-translate-y-2
                 hover:scale-105
                 transition duration-300
+                known as well as knowledge items 
                 cursor-pointer
               "
             >
               <div className="
                 w-14 h-14 flex items-center justify-center
                 rounded-full
-                bg-gradient-to-br from-brandBlue/20 to-brandRed/20
-                text-brandRed
+                bg-gradient-to-br from-brandBlue/30 to-brandRed/30
+                text-white
                 group-hover:scale-125
                 transition
               ">
                 {item.icon}
               </div>
 
-              <span className="text-lg font-semibold text-gray-700">
+              <span className="text-lg font-semibold text-gray-100">
                 {item.title}
               </span>
             </div>
@@ -118,11 +120,11 @@ function FeatureBlock({ title, text, reverse }) {
 
       <div className={`w-28 h-1.5 mb-6 rounded-full bg-gradient-to-r from-brandBlue to-brandRed ${reverse ? "ml-auto" : ""}`} />
 
-      <h3 className="text-4xl font-bold text-brandBlue mb-6">
+      <h3 className="text-4xl font-bold mb-6 text-white">
         {title}
       </h3>
 
-      <p className={`text-gray-600 text-lg leading-relaxed mb-8 max-w-xl ${reverse ? "ml-auto" : ""}`}>
+      <p className={`text-gray-300 text-lg leading-relaxed mb-8 max-w-xl ${reverse ? "ml-auto" : ""}`}>
         {text}
       </p>
 
