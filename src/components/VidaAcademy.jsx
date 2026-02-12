@@ -48,14 +48,20 @@ export default function VidaAcademy() {
       },
     });
 
-    gsap.to(".bg-slide", {
-      opacity: 1,
-      duration: 2,
-      stagger: {
-        each: 4,
-        repeat: -1,
-        yoyo: true,
-      },
+    // ✅ FIXED BACKGROUND SLIDER (no white flash)
+    const slides = gsap.utils.toArray(".bg-slide");
+
+    // Show first slide immediately
+    gsap.set(slides[0], { opacity: 1 });
+
+    const tl = gsap.timeline({ repeat: -1 });
+
+    slides.forEach((slide, i) => {
+      if (i === 0) return;
+
+      tl.to(slides, { opacity: 0, duration: 1.5 })
+        .to(slide, { opacity: 1, duration: 1.5 })
+        .to({}, { duration: 3 }); // hold time
     });
 
   }, []);
@@ -105,59 +111,28 @@ export default function VidaAcademy() {
   `;
 
   return (
-    <section className="relative py-28 overflow-hidden text-white">
+    <section className="relative py-28 overflow-hidden text-white bg-[#021a40]">
 
       {/* ===== BACKGROUND SLIDER ===== */}
       <div className="absolute inset-0 z-0">
 
-        <div
-          className="bg-slide absolute inset-0 bg-cover bg-center opacity-0"
-          style={{
-            backgroundImage: `${darkOverlay}, url(https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80)`,
-          }}
-        />
-
-        <div
-          className="bg-slide absolute inset-0 bg-cover bg-center opacity-0"
-          style={{
-            backgroundImage: `${darkOverlay}, url(https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1920&q=80)`,
-          }}
-        />
-
-        <div
-          className="bg-slide absolute inset-0 bg-cover bg-center opacity-0"
-          style={{
-            backgroundImage: `${darkOverlay}, url(https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1920&q=80)`,
-          }}
-        />
-
-        <div
-          className="bg-slide absolute inset-0 bg-cover bg-center opacity-0"
-          style={{
-            backgroundImage: `${darkOverlay}, url(https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80)`,
-          }}
-        />
-
-        <div
-          className="bg-slide absolute inset-0 bg-cover bg-center opacity-0"
-          style={{
-            backgroundImage: `${darkOverlay}, url(https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=1920&q=80)`,
-          }}
-        />
-
-        <div
-          className="bg-slide absolute inset-0 bg-cover bg-center opacity-0"
-          style={{
-            backgroundImage: `${darkOverlay}, url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1920&q=80)`,
-          }}
-        />
-
-        <div
-          className="bg-slide absolute inset-0 bg-cover bg-center opacity-0"
-          style={{
-            backgroundImage: `${darkOverlay}, url(https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1920&q=80)`,
-          }}
-        />
+        {[
+          "photo-1519494026892-80bbd2d6fd0d",
+          "photo-1524178232363-1fb2b075b655",
+          "photo-1576091160399-112ba8d25d1d",
+          "photo-1523240795612-9a054b0db644",
+          "photo-1588196749597-9ff075ee6b5b",
+          "photo-1507679799987-c73779587ccf",
+          "photo-1532094349884-543bc11b234d",
+        ].map((id, i) => (
+          <div
+            key={i}
+            className="bg-slide absolute inset-0 bg-cover bg-center opacity-0"
+            style={{
+              backgroundImage: `${darkOverlay}, url(https://images.unsplash.com/${id}?auto=format&fit=crop&w=1920&q=80)`,
+            }}
+          />
+        ))}
 
       </div>
 
