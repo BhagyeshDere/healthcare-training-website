@@ -1,54 +1,91 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(null);
+  const navRef = useRef();
 
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setOpen(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // ✅ UPDATED MENU WITH REAL PATHS
   const menu = [
     {
       title: "ABOUT",
-      links: ["Who We Are", "Objectives", "Leadership"],
+      links: [
+        { name: "Who We Are", path: "/who-we-are" },
+        { name: "Objectives", path: "/objectives" },
+        { name: "Leadership", path: "/leadership" },
+      ],
     },
     {
       title: "EVENTS",
-      links: ["Annual Events", "Partner Events", "International Events"],
+      links: [
+        { name: "Annual Events", path: "/events/annual" },
+        { name: "Partner Events", path: "/events/partner" },
+        { name: "International Events", path: "/events/international" },
+      ],
     },
     {
       title: "MEMBERSHIP",
       links: [
-        "Healthcare Institutions",
-        "Diagnostic Centres",
-        "Quality Professionals",
-        "Academic Institution",
+        { name: "Healthcare Institutions", path: "/membership/healthcare" },
+        { name: "Diagnostic Centres", path: "/membership/diagnostic" },
+        { name: "Quality Professionals", path: "/membership/quality" },
+        { name: "Academic Institution", path: "/membership/academic" },
       ],
     },
     {
       title: "ACADEMY",
       links: [
-        "Training Programs",
-        "Excellence Programs",
-        "Masterclass Series",
-        "Webinars",
+        { name: "Training Programs", path: "/academy/training" },
+        { name: "Excellence Programs", path: "/academy/excellence" },
+        { name: "Masterclass Series", path: "/academy/masterclass" },
+        { name: "Webinars", path: "/academy/webinars" },
       ],
     },
     {
       title: "LIBRARY",
-      links: ["Articles", "Whitepapers", "Videos"],
+      links: [
+        { name: "Articles", path: "/library/articles" },
+        { name: "Whitepapers", path: "/library/whitepapers" },
+        { name: "Videos", path: "/library/videos" },
+      ],
     },
     {
       title: "RESOURCES",
-      links: ["Friday Update", "Toolkits", "Fire Safety Audit"],
+      links: [
+        { name: "Friday Update", path: "/resources/friday" },
+        { name: "Toolkits", path: "/resources/toolkits" },
+        { name: "Fire Safety Audit", path: "/resources/fire-audit" },
+      ],
     },
     {
       title: "ACCOLADE",
-      links: ["Hall of Fame", "Awards"],
+      links: [
+        { name: "Hall of Fame", path: "/accolade/hall-of-fame" },
+        { name: "Awards", path: "/accolade/awards" },
+      ],
     },
   ];
 
+  const toggleMenu = (i) => {
+    setOpen(open === i ? null : i);
+  };
+
   return (
     <>
-      {/* TOP BAR — PREMIUM GRADIENT */}
+      {/* TOP BAR */}
       <div className="
         bg-gradient-to-r from-brandBlue to-brandRed
         text-white text-sm
@@ -71,73 +108,59 @@ export default function Navbar() {
         </select>
       </div>
 
-      {/* MAIN NAVBAR — GLASS STYLE */}
-      <nav className="
+      {/* MAIN NAVBAR */}
+      <nav
+        ref={navRef}
+        className="
         sticky top-0 z-50
         bg-white/80 backdrop-blur-xl
         border-b border-gray-200
         px-12 py-4
         flex items-center justify-between
-      ">
-
+      "
+      >
         {/* LOGO */}
-        <div className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img
             src="/logo.png"
             alt="VIDA Logo"
             className="h-12 hover:scale-105 transition"
           />
-        </div>
+        </Link>
 
         {/* MENU */}
         <div className="flex items-center gap-10 font-medium text-gray-700">
-
+          
           {/* HOME */}
           <Link
             to="/"
-            className="
-              relative font-semibold
-              hover:text-brandBlue transition
-              after:absolute after:left-0 after:-bottom-2
-              after:h-[2px] after:w-0
-              after:bg-gradient-to-r after:from-brandBlue after:to-brandRed
-              hover:after:w-full after:transition-all
-            "
+            className="relative font-semibold hover:text-brandBlue transition"
           >
             HOME
           </Link>
 
           {/* DROPDOWNS */}
           {menu.map((item, i) => (
-            <div
-              key={i}
-              className="relative"
-              onMouseEnter={() => setOpen(i)}
-              onMouseLeave={() => setOpen(null)}
-            >
-              <button className="
-                relative hover:text-brandBlue transition
-                after:absolute after:left-0 after:-bottom-2
-                after:h-[2px] after:w-0
-                after:bg-gradient-to-r after:from-brandBlue after:to-brandRed
-                hover:after:w-full after:transition-all
-              ">
+            <div key={i} className="relative">
+              <button
+                onClick={() => toggleMenu(i)}
+                className="relative hover:text-brandBlue transition"
+              >
                 {item.title}
               </button>
 
               {open === i && (
                 <div className="
                   absolute top-12 left-0
-                  bg-white/95 backdrop-blur-xl
-                  shadow-xl rounded-xl
+                  bg-white shadow-xl rounded-xl
                   w-60 border
                   overflow-hidden z-50
-                  animate-fadeIn
                 ">
                   {item.links.map((link, idx) => (
                     <Link
                       key={idx}
-                      to="#"
+                      to={link.path}
+                      onClick={() => setOpen(null)}
                       className="
                         block px-5 py-3
                         hover:bg-gradient-to-r
@@ -146,7 +169,7 @@ export default function Navbar() {
                         transition
                       "
                     >
-                      {link}
+                      {link.name}
                     </Link>
                   ))}
                 </div>
@@ -157,13 +180,7 @@ export default function Navbar() {
           {/* CONTACT */}
           <Link
             to="/contact"
-            className="
-              relative hover:text-brandBlue transition
-              after:absolute after:left-0 after:-bottom-2
-              after:h-[2px] after:w-0
-              after:bg-gradient-to-r after:from-brandBlue after:to-brandRed
-              hover:after:w-full after:transition-all
-            "
+            className="relative hover:text-brandBlue transition"
           >
             CONTACT US
           </Link>
