@@ -1,5 +1,8 @@
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import JourneySection from "../../components/JourneySection"; // ✅ ADDED
+
 import {
   HeartPulse,
   ShieldCheck,
@@ -590,101 +593,23 @@ export default function WhoWeAre() {
 
   </div>
 </section>
-{/* ================= PREMIUM JOURNEY TIMELINE ================= */}
-<section className="relative py-32 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
-
-  {/* Soft Glow Backgrounds */}
-  <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200/30 blur-3xl rounded-full" />
-  <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-200/30 blur-3xl rounded-full" />
-
-  <h2 className="text-center text-5xl font-extrabold text-blue-900 mb-24">
-    Our Journey
-  </h2>
-
-  <div className="relative max-w-6xl mx-auto px-6">
-
-    {/* Center Gradient Line */}
-    <div className="absolute left-1/2 -translate-x-1/2 w-1 bg-gradient-to-b from-blue-800 via-blue-500 to-red-500 h-full rounded-full" />
-
-    {[
-      { year: "2011", title: "Foundation", text: "Vida Life Sciences Pvt Ltd. was launched by Dr. Onkar Yadav, Mr. Dhananjay Sawant & Mr. Sanjay Khandagale." },
-
-      { year: "2012", title: "Operations Start", text: "Started hospital equipment & furniture supply." },
-
-      { year: "2013", title: "Manufacturing", text: "Started in-house manufacturing of CSSD, OT equipment and hospital furniture." },
-
-      { year: "2014", title: "Consultancy", text: "Started designing new hospital project services & biomedical consultancy." },
-
-      { year: "2015", title: "Global Expansion", text: "Reached almost every district of Maharashtra and expanded to Karnataka, Telangana, MP, Gujarat, Muscat & Malaysia." },
-
-      { year: "2016", title: "R&D Launch", text: "Started own R&D department to develop new CSSD equipment." },
-
-      { year: "2017", title: "Awarded", text: "Received Fastest Growing Indian Company Excellence Award at International Achievers Conference." },
-
-      { year: "2018", title: "Innovation", text: "Developed Automatic Bed Pan Washer Disinfector with AO value calculation." },
-
-      { year: "2019", title: "International Project", text: "First international CSSD setup in South Africa – Congo." },
-
-      { year: "2020", title: "COVID Resilience", text: "Successfully completed installations in Manipur-Imphal despite pandemic challenges." },
-
-      { year: "2021", title: "Government Projects", text: "Executed multiple CSSD projects in government sector." },
-
-      { year: "2022", title: "New Product", text: "Added double-door instrument washer cum dryer." },
-
-      { year: "2023", title: "Scale Up", text: "Continued expansion with large CSSD projects in medical colleges." },
-
-      { year: "2024", title: "Research Published", text: "Published AO concept research in international journal and developing ICU & Dental products." },
-
-      { year: "2025", title: "Patent & Leadership", text: "Received first patent, launched advanced sterilizers, and leadership milestones achieved." },
-    ].map((item, i) => (
-
-      <motion.div
-        key={i}
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-        className={`relative mb-24 flex ${i % 2 === 0 ? "justify-start" : "justify-end"}`}
-      >
-
-        {/* Timeline Dot */}
-        <div className="absolute left-1/2 -translate-x-1/2 w-7 h-7 bg-white border-4 border-blue-800 rounded-full shadow-xl z-10" />
-
-        {/* Glass Card */}
-        <div className="w-[46%] backdrop-blur-xl bg-white/80 border border-white/40 p-10 rounded-3xl shadow-xl hover:scale-105 hover:shadow-2xl transition">
-
-          <span className="text-sm font-semibold text-red-500 tracking-wider">
-            {item.title}
-          </span>
-
-          <h3 className="text-2xl font-bold text-blue-900 mt-2">
-            {item.year}
-          </h3>
-
-          <p className="mt-4 text-gray-700 text-lg leading-relaxed">
-            {item.text}
-          </p>
-
-          {/* Accent Line */}
-          <div className="mt-6 h-1 w-24 bg-gradient-to-r from-blue-700 to-red-500 rounded-full" />
-
-        </div>
-
-      </motion.div>
-    ))}
-  </div>
-</section>
+<JourneySection />
 
 
 {/* ================= CTA ================= */}
 <section className="relative py-28 text-center overflow-hidden">
 
-  {/* Background Gradient */}
-  <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-blue-100" />
+  {/* Light Logo-Themed Background */}
+  <div className="absolute inset-0 
+    bg-gradient-to-br 
+    from-blue-50 via-white to-red-50" />
 
-  {/* Soft Glow */}
-  <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-300/30 blur-3xl rounded-full" />
-  <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-300/30 blur-3xl rounded-full" />
+  {/* Soft Logo Glow */}
+  <div className="absolute top-0 left-1/4 
+    w-96 h-96 bg-blue-300/30 blur-3xl rounded-full" />
+
+  <div className="absolute bottom-0 right-1/4 
+    w-96 h-96 bg-red-300/30 blur-3xl rounded-full" />
 
   <motion.div
     initial={{ opacity: 0, y: 40 }}
@@ -697,18 +622,22 @@ export default function WhoWeAre() {
     {/* Badge */}
     <div className="
       inline-block mb-6 px-6 py-2 
-      bg-white/70 backdrop-blur-md 
-      text-cyan-700 
+      bg-white/80 backdrop-blur-md 
+      text-blue-700 
       rounded-full 
       text-sm tracking-wider 
-      border border-cyan-200
+      border border-blue-200
       shadow-sm
     ">
       Trusted Healthcare Partner
     </div>
 
     <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-blue-900">
-      Working with VIDA Life Sciences
+      Working with{" "}
+      <span className="bg-gradient-to-r from-red-500 to-blue-600 
+                       bg-clip-text text-transparent">
+        VIDA Life Sciences
+      </span>
     </h2>
 
     <p className="max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed">
@@ -723,9 +652,10 @@ export default function WhoWeAre() {
         to="/contact"
         className="
           inline-block px-12 py-4 
-          bg-cyan-600 text-white font-semibold 
+          bg-gradient-to-r from-red-500 to-blue-600
+          text-white font-semibold 
           rounded-full shadow-lg
-          hover:bg-cyan-700
+          hover:opacity-90
           hover:scale-105
           transition duration-300
         "
@@ -737,10 +667,10 @@ export default function WhoWeAre() {
         to="/who-we-are"
         className="
           inline-block px-12 py-4
-          border-2 border-cyan-600
-          text-cyan-700
+          border-2 border-blue-600
+          text-blue-700
           rounded-full
-          hover:bg-cyan-600
+          hover:bg-blue-600
           hover:text-white
           transition duration-300
         "
