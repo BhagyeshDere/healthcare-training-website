@@ -49,59 +49,33 @@ export default function HeroSlider() {
             className="w-full h-full object-cover object-center"
           />
 
-          {/* SOFT COLOR OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-r from-brandBlue/30 via-black/20 to-brandRed/30"></div>
+          {/* ✅ DARKER OVERLAY FOR TEXT VISIBILITY */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/60"></div>
 
           {/* CONTENT */}
-          <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="max-w-4xl mx-auto px-6 text-center text-white space-y-8">
 
-              {/* LEFT TEXT */}
-              <div className="text-white space-y-6">
+              <span className="bg-white/20 backdrop-blur px-5 py-2 rounded-full text-sm">
+                VIDA Life Sciences
+              </span>
 
-                <span className="bg-white/20 backdrop-blur px-4 py-1 rounded-full text-sm">
-                  VIDA Life Sciences
-                </span>
+              <h1 className="text-6xl md:text-7xl font-bold leading-tight drop-shadow-lg">
+                {slide.title}
+              </h1>
 
-                <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                  {slide.title}
-                </h1>
+              <p className="text-xl text-gray-200 max-w-2xl mx-auto drop-shadow-md">
+                {slide.subtitle}
+              </p>
 
-                <p className="text-lg text-gray-200 max-w-lg">
-                  {slide.subtitle}
-                </p>
+              <div className="flex gap-6 justify-center">
+                <button className="bg-gradient-to-r from-brandBlue to-brandRed px-10 py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition">
+                  Explore Programs
+                </button>
 
-                <div className="flex gap-4">
-                  <button className="bg-gradient-to-r from-brandBlue to-brandRed px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition">
-                    Explore Programs
-                  </button>
-
-                  <button className="border border-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition">
-                    Contact Us
-                  </button>
-                </div>
-              </div>
-
-              {/* RIGHT GLASS CARD */}
-              <div className="hidden md:block">
-                <div className="
-                  bg-white/10 backdrop-blur-xl
-                  border border-white/20
-                  p-10 rounded-3xl
-                  text-white
-                  shadow-2xl
-                ">
-                  <h3 className="text-2xl font-semibold mb-4">
-                    Why VIDA?
-                  </h3>
-
-                  <ul className="space-y-3 text-gray-200">
-                    <li>✔ Global healthcare standards</li>
-                    <li>✔ Certified training programs</li>
-                    <li>✔ 40,000+ professionals trained</li>
-                    <li>✔ International collaborations</li>
-                  </ul>
-                </div>
+                <button className="border border-white px-10 py-4 rounded-full hover:bg-white hover:text-black transition">
+                  Contact Us
+                </button>
               </div>
 
             </div>
@@ -109,7 +83,7 @@ export default function HeroSlider() {
         </div>
       ))}
 
-      {/* PROGRESS BAR INDICATOR */}
+      {/* PROGRESS BAR */}
       <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20">
         <div
           className="h-full bg-gradient-to-r from-brandBlue to-brandRed transition-all duration-[6000ms]"

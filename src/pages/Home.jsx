@@ -10,7 +10,6 @@ import LibrarySection from "../components/LibrarySection";
 import VidaAwardsSection from "../components/VidaAwardsSection";
 import VidaResourcesSection from "../components/VidaResourcesSection";
 import VidaConnectSection from "../components/VidaConnectSection"; // ✅ NEW SECTION
-import Footer from "../components/Footer";
 
 /* PREMIUM ANIMATION VARIANTS */
 const sectionVariant = {
@@ -92,15 +91,7 @@ export default function Home() {
         <VidaConnectSection />
       </MotionSection>
 
-      {/* FOOTER */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-      >
-        <Footer />
-      </motion.div>
+     
     </motion.main>
   );
 }

@@ -1,103 +1,169 @@
-import {
-  GraduationCap,
-  MonitorPlay,
-  Globe,
-  Microscope,
-  BookOpen,
-  Award,
-  Sparkles,
-} from "lucide-react";
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function VidaAcademy() {
 
+  useEffect(() => {
+
+    gsap.to(".academy-header", {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".academy-header",
+        start: "top 80%",
+      },
+    });
+
+    gsap.to(".d-card", {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: ".program-grid",
+        start: "top 85%",
+      },
+    });
+
+  }, []);
+
   const items = [
-    { icon: <GraduationCap size={28} />, title: "Training Programs", img: "/images/academy/academy1.png" },
-    { icon: <Microscope size={28} />, title: "Continuing Diagnostic Education (CDE)", img: "/images/academy/academy2.png" },
-    { icon: <Award size={28} />, title: "Masterclass Series", img: "/images/academy/academy3.png" },
-    { icon: <MonitorPlay size={28} />, title: "Webinars", img: "/images/academy/academy4.png" },
-    { icon: <BookOpen size={28} />, title: "CQE Series", img: "/images/academy/academy5.png" },
-    { icon: <Globe size={28} />, title: "International Programs", img: "/images/academy/academy6.png" },
-    { icon: <Sparkles size={28} />, title: "Research Initiatives", img: "/images/academy/academy7.png" },
-    { icon: <Award size={28} />, title: "National IPC Certification", img: "/images/academy/academy8.png" },
+    {
+      title: "Training Programs",
+      desc: "Professional healthcare training programs designed to improve skills.",
+      points: ["Certification", "Workshops", "Practical Learning"],
+      bg: "bg-training",
+    },
+    {
+      title: "CDE Series",
+      desc: "Continuing Diagnostic Education for healthcare excellence.",
+      points: ["Case Studies", "Expert Talks", "Skill Growth"],
+      bg: "bg-cde",
+    },
+    {
+      title: "Masterclass",
+      desc: "Advanced masterclasses by industry experts.",
+      points: ["Expert Led", "Advanced Modules", "Interactive"],
+      bg: "bg-masterclass",
+    },
+    {
+      title: "Webinars",
+      desc: "Live online sessions with global access.",
+      points: ["Live Sessions", "Global Access", "Recordings"],
+      bg: "bg-webinars",
+    },
+    {
+      title: "CQE Series",
+      desc: "Quality engagement programs for healthcare.",
+      points: ["Standards", "Compliance", "Quality"],
+      bg: "bg-cqe",
+    },
+    {
+      title: "Research",
+      desc: "Encouraging innovation & academic publishing.",
+      points: ["Data Analysis", "Writing", "Guidance"],
+      bg: "bg-research",
+    },
   ];
 
+  const changeBg = (id) => {
+    document.querySelectorAll(".bg-layer").forEach(el =>
+      el.classList.remove("opacity-100")
+    );
+    document.getElementById(id)?.classList.add("opacity-100");
+  };
+
   return (
-    <section className="py-28 bg-white relative overflow-hidden">
+    <section className="relative py-28 overflow-hidden bg-[#071A2F] text-white">
 
-      {/* SOFT GLOWS */}
-      <div className="absolute -top-20 -left-20 w-96 h-96 bg-brandBlue/10 blur-[120px] rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brandRed/10 blur-[120px] rounded-full"></div>
+      {/* Backgrounds */}
+      <div className="absolute inset-0 z-0">
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div
+          id="bg-default"
+          className="bg-layer opacity-100 absolute inset-0 bg-cover bg-center transition duration-700"
+          style={{ backgroundImage: "url(https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d)" }}
+        />
 
-        {/* HEADER */}
-        <div className="text-center mb-16">
-          <span className="text-brandRed font-semibold uppercase tracking-wider">
+        {["training","cde","masterclass","webinars","cqe","research"].map(name => (
+          <div
+            key={name}
+            id={`bg-${name}`}
+            className="bg-layer absolute inset-0 bg-cover bg-center opacity-0 transition"
+            style={{
+              backgroundImage: `url(https://images.unsplash.com/photo-1524178232363-1fb2b075b655)`
+            }}
+          />
+        ))}
+
+        <div className="absolute inset-0 bg-gradient-to-br from-[#071A2F]/95 via-[#0B2C5A]/90 to-[#071A2F]/95" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+
+        {/* Header */}
+        <div className="academy-header text-center mb-20 opacity-0 -translate-y-10">
+
+          <h2 className="text-5xl font-extrabold text-cyan-300">
             VIDA Academy
-          </span>
-
-          <h2 className="text-5xl font-bold text-brandBlue mt-4 mb-6">
-            Learn. Lead. Transform Healthcare.
           </h2>
 
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            VIDA Academy delivers online and offline training,
-            certifications and research programs for healthcare
-            professionals across the globe.
+          <p className="text-gray-200 mt-4 max-w-2xl mx-auto">
+            Empowering healthcare delivery through Online & Offline training,
+            research, and global collaboration.
           </p>
 
-          <div className="w-24 h-1 bg-gradient-to-r from-brandBlue to-brandRed mx-auto mt-6"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-red-400 mx-auto mt-6 rounded-full"/>
         </div>
 
-        {/* IMAGE CARDS */}
-        <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-8">
+        {/* Grid */}
+        <div className="program-grid grid md:grid-cols-3 gap-16">
 
           {items.map((item, i) => (
-            <div key={i} className="group relative h-64 rounded-2xl overflow-hidden cursor-pointer">
+            <div
+              key={i}
+              onMouseEnter={() => changeBg(item.bg)}
+              className="d-card opacity-0 translate-y-10 text-center p-6 cursor-pointer transition hover:-translate-y-3"
+            >
 
-              <img
-                src={item.img}
-                alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
-              />
+              {/* ✅ FIXED ICON LOGIC */}
+              <div className="mx-auto mb-6 w-16 h-16 rounded-full
+                              bg-white/15 backdrop-blur-md
+                              flex items-center justify-center
+                              shadow-lg border border-white/30">
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-
-              <div className="absolute bottom-0 p-6 text-white flex flex-col gap-3">
-
-                <div className="w-12 h-12 flex items-center justify-center bg-white/20 backdrop-blur-md rounded-xl text-brandRed">
-                  {item.icon}
-                </div>
-
-                <h3 className="font-semibold text-lg leading-snug">
-                  {item.title}
-                </h3>
-
-                <div className={`
-                  h-1 w-0
-                  bg-gradient-to-r from-brandBlue to-brandRed
-                  group-hover:w-full
-                  transition-all duration-500
-                `}></div>
+                <div className="w-10 h-10 rounded-full border-4 border-white"></div>
 
               </div>
+
+              <h3 className="text-2xl font-bold text-cyan-300">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-200 mt-3">
+                {item.desc}
+              </p>
+
+              <ul className="text-gray-300 mt-4 space-y-1">
+                {item.points.map((p, idx) => (
+                  <li key={idx}>• {p}</li>
+                ))}
+              </ul>
+
+              <button className="mt-6 px-6 py-2 border-2 border-red-400 text-red-400 rounded-full hover:bg-red-400 hover:text-white transition">
+                Read More
+              </button>
 
             </div>
           ))}
 
         </div>
-
-        {/* CTA */}
-        <div className="text-center mt-16">
-          <button className={`
-            bg-gradient-to-r from-brandBlue to-brandRed
-            text-white px-10 py-4 rounded-full
-            shadow-xl hover:scale-110 transition
-          `}>
-            Explore Academy
-          </button>
-        </div>
-
       </div>
     </section>
   );
