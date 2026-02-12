@@ -21,7 +21,7 @@ import {
 export default function VidaResourcesSection() {
   const scrollRef = useRef(null);
 
-  // ✅ AUTO SCROLL (unchanged)
+  // ✅ AUTO SCROLL (unchanged logic)
   useEffect(() => {
     const container = scrollRef.current;
 
@@ -62,70 +62,100 @@ export default function VidaResourcesSection() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white via-brandBlue/5 to-white">
+    <section className="py-28 relative overflow-hidden bg-gradient-to-b from-white via-blue-50/40 to-white">
 
-      {/* SOFT GLOW BG */}
+      {/* ===== PREMIUM BACKGROUND GLOW ===== */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-brandBlue/10 blur-[160px] rounded-full" />
-        <div className="absolute bottom-0 right-1/3 w-[600px] h-[600px] bg-brandRed/10 blur-[160px] rounded-full" />
+        <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-blue-200/30 blur-[180px] rounded-full" />
+        <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-red-200/30 blur-[180px] rounded-full" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* HEADER */}
-        <div className="text-center mb-16">
-          <span className="text-brandRed uppercase tracking-[5px] text-sm font-semibold">
+        {/* ===== HEADER ===== */}
+        <div className="text-center mb-20">
+
+          <span className="text-red-500 uppercase tracking-[6px] text-sm font-semibold">
             VIDA Resources
           </span>
 
-          <h2 className="text-5xl md:text-6xl font-bold text-brandBlue mt-4">
+          <h2 className="text-5xl md:text-6xl font-extrabold mt-4 bg-gradient-to-r from-blue-800 to-red-500 text-transparent bg-clip-text">
             Explore Resources
           </h2>
 
-          <p className="text-gray-600 mt-5 max-w-xl mx-auto text-lg">
-            Tools and knowledge systems empowering healthcare excellence.
+          <p className="text-gray-600 mt-6 max-w-xl mx-auto text-lg leading-relaxed">
+            Intelligent tools, frameworks and knowledge systems
+            designed to elevate healthcare excellence.
           </p>
         </div>
 
-        {/* ✅ ONE LINE AUTO SCROLL */}
+        {/* ===== AUTO SCROLL STRIP ===== */}
         <div
           ref={scrollRef}
-          className="flex gap-14 overflow-x-hidden whitespace-nowrap py-10"
+          className="
+            flex gap-16 overflow-x-hidden whitespace-nowrap py-14
+            [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
+          "
         >
           {[...resources, ...resources].map((item, i) => (
             <div
               key={i}
               className="group relative flex-shrink-0 flex flex-col items-center cursor-pointer"
             >
-              {/* Animated Glow Halo */}
-              <div className="absolute w-40 h-40 rounded-full bg-gradient-to-br from-brandBlue/30 to-brandRed/30 blur-2xl opacity-0 group-hover:opacity-100 transition duration-500" />
 
-              {/* Premium Icon Bubble */}
+              {/* FLOATING GLOW ORB */}
+              <div className="
+                absolute w-44 h-44 rounded-full
+                bg-gradient-to-br from-blue-500/30 to-red-400/30
+                blur-3xl opacity-0 group-hover:opacity-100
+                transition duration-500
+              " />
+
+              {/* ICON CONTAINER */}
               <div
                 className="
-                  relative w-32 h-32 rounded-3xl
-                  bg-white/70 backdrop-blur-xl
-                  shadow-[0_10px_30px_rgba(0,0,0,0.08)]
-                  border border-white/60
+                  relative w-32 h-32 rounded-[28px]
+                  bg-white/60 backdrop-blur-2xl
+                  border border-white/40
                   flex items-center justify-center
-                  group-hover:-translate-y-3
+                  shadow-[0_15px_40px_rgba(0,0,0,0.08)]
+                  
+                  transform transition duration-500
+                  group-hover:-translate-y-4
+                  group-hover:rotate-1
                   group-hover:scale-110
-                  group-hover:shadow-[0_20px_50px_rgba(30,58,138,0.25)]
-                  transition duration-500
+                  group-hover:shadow-[0_25px_60px_rgba(30,58,138,0.25)]
                 "
               >
-                {/* Gradient Border Glow */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brandBlue/20 to-brandRed/20 opacity-0 group-hover:opacity-100 transition" />
 
-                <div className="relative z-10 text-brandBlue group-hover:text-brandRed transition duration-300">
+                {/* INNER GRADIENT RING */}
+                <div className="
+                  absolute inset-0 rounded-[28px]
+                  bg-gradient-to-br from-blue-600/10 to-red-500/10
+                  opacity-0 group-hover:opacity-100 transition
+                " />
+
+                {/* ICON */}
+                <div className="
+                  relative z-10
+                  text-blue-800
+                  group-hover:text-red-500
+                  transition duration-300
+                ">
                   {item.icon}
                 </div>
               </div>
 
-              {/* Label */}
-              <p className="mt-5 font-semibold text-gray-700 text-base tracking-wide group-hover:text-brandBlue transition">
+              {/* LABEL */}
+              <p className="
+                mt-6 font-semibold text-gray-700
+                tracking-wide text-base
+                group-hover:text-blue-800
+                transition
+              ">
                 {item.label}
               </p>
+
             </div>
           ))}
         </div>
