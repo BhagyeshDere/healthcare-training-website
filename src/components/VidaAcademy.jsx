@@ -8,6 +8,7 @@ export default function VidaAcademy() {
 
   useEffect(() => {
 
+    // Header animation
     gsap.to(".academy-header", {
       opacity: 1,
       y: 0,
@@ -18,6 +19,7 @@ export default function VidaAcademy() {
       },
     });
 
+    // Cards entrance
     gsap.to(".d-card", {
       y: 0,
       opacity: 1,
@@ -27,6 +29,17 @@ export default function VidaAcademy() {
       scrollTrigger: {
         trigger: ".program-grid",
         start: "top 85%",
+      },
+    });
+
+    // Icon draw
+    gsap.to(".card-icon-svg", {
+      strokeDashoffset: 0,
+      duration: 2,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: ".program-grid",
+        start: "top 75%",
       },
     });
 
@@ -79,37 +92,48 @@ export default function VidaAcademy() {
   };
 
   return (
-    <section className="relative py-28 overflow-hidden bg-[#071A2F] text-white">
+    <section className="relative py-28 overflow-hidden bg-[#021a40] text-white">
 
-      {/* Backgrounds */}
+      {/* ===== Background Layers ===== */}
       <div className="absolute inset-0 z-0">
 
-        <div
-          id="bg-default"
-          className="bg-layer opacity-100 absolute inset-0 bg-cover bg-center transition duration-700"
+        <div id="bg-default" className="bg-layer opacity-100 absolute inset-0 bg-cover bg-center transition duration-700"
           style={{ backgroundImage: "url(https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d)" }}
         />
 
-        {["training","cde","masterclass","webinars","cqe","research"].map(name => (
-          <div
-            key={name}
-            id={`bg-${name}`}
-            className="bg-layer absolute inset-0 bg-cover bg-center opacity-0 transition"
-            style={{
-              backgroundImage: `url(https://images.unsplash.com/photo-1524178232363-1fb2b075b655)`
-            }}
-          />
-        ))}
+        <div id="bg-training" className="bg-layer absolute inset-0 bg-cover bg-center opacity-0 transition"
+          style={{ backgroundImage: "url(https://images.unsplash.com/photo-1524178232363-1fb2b075b655)" }}
+        />
 
-        <div className="absolute inset-0 bg-gradient-to-br from-[#071A2F]/95 via-[#0B2C5A]/90 to-[#071A2F]/95" />
+        <div id="bg-cde" className="bg-layer absolute inset-0 bg-cover bg-center opacity-0 transition"
+          style={{ backgroundImage: "url(https://images.unsplash.com/photo-1576091160399-112ba8d25d1d)" }}
+        />
+
+        <div id="bg-masterclass" className="bg-layer absolute inset-0 bg-cover bg-center opacity-0 transition"
+          style={{ backgroundImage: "url(https://images.unsplash.com/photo-1523240795612-9a054b0db644)" }}
+        />
+
+        <div id="bg-webinars" className="bg-layer absolute inset-0 bg-cover bg-center opacity-0 transition"
+          style={{ backgroundImage: "url(https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b)" }}
+        />
+
+        <div id="bg-cqe" className="bg-layer absolute inset-0 bg-cover bg-center opacity-0 transition"
+          style={{ backgroundImage: "url(https://images.unsplash.com/photo-1507679799987-c73779587ccf)" }}
+        />
+
+        <div id="bg-research" className="bg-layer absolute inset-0 bg-cover bg-center opacity-0 transition"
+          style={{ backgroundImage: "url(https://images.unsplash.com/photo-1532094349884-543bc11b234d)" }}
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-[#021a40]/90" />
       </div>
 
-      {/* Content */}
+      {/* ===== Content ===== */}
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
         {/* Header */}
         <div className="academy-header text-center mb-20 opacity-0 -translate-y-10">
-
           <h2 className="text-5xl font-extrabold text-cyan-300">
             VIDA Academy
           </h2>
@@ -118,8 +142,6 @@ export default function VidaAcademy() {
             Empowering healthcare delivery through Online & Offline training,
             research, and global collaboration.
           </p>
-
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-red-400 mx-auto mt-6 rounded-full"/>
         </div>
 
         {/* Grid */}
@@ -131,16 +153,19 @@ export default function VidaAcademy() {
               onMouseEnter={() => changeBg(item.bg)}
               className="d-card opacity-0 translate-y-10 text-center p-6 cursor-pointer transition hover:-translate-y-3"
             >
-
-              {/* ✅ FIXED ICON LOGIC */}
-              <div className="mx-auto mb-6 w-16 h-16 rounded-full
-                              bg-white/15 backdrop-blur-md
-                              flex items-center justify-center
-                              shadow-lg border border-white/30">
-
-                <div className="w-10 h-10 rounded-full border-4 border-white"></div>
-
-              </div>
+              {/* Icon SVG */}
+              <svg
+                className="card-icon-svg mx-auto mb-6 w-16 h-16"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth="2"
+                strokeDasharray="100"
+                strokeDashoffset="100"
+                viewBox="0 0 24 24"
+                style={{ filter: "drop-shadow(0 0 8px rgba(255,255,255,0.8))" }}
+              >
+                <circle cx="12" cy="12" r="9" />
+              </svg>
 
               <h3 className="text-2xl font-bold text-cyan-300">
                 {item.title}
@@ -156,10 +181,9 @@ export default function VidaAcademy() {
                 ))}
               </ul>
 
-              <button className="mt-6 px-6 py-2 border-2 border-red-400 text-red-400 rounded-full hover:bg-red-400 hover:text-white transition">
+              <button className="mt-6 px-6 py-2 border-2 border-red-400 text-red-400 rounded-full hover:bg-red-500 hover:text-white transition">
                 Read More
               </button>
-
             </div>
           ))}
 
