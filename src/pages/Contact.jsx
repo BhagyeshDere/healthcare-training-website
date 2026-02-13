@@ -7,7 +7,7 @@ import {
 
 export default function Contact() {
   return (
-    <section className="w-full overflow-x-hidden bg-gradient-to-br from-blue-50 via-white to-red-50">
+<section className="w-full overflow-x-hidden bg-gradient-to-br from-blue-50 via-white to-red-50">
 
 {/* ===== HERO WITH IMAGE ===== */}
 <div className="relative min-h-[420px] md:h-[560px] flex items-center justify-center text-center text-white overflow-hidden">
@@ -18,15 +18,13 @@ export default function Contact() {
     className="absolute inset-0 w-full h-full object-cover scale-110"
   />
 
-  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"/>
-  <div className="absolute inset-0 bg-black/30"/>
-
-  <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full"/>
-  <div className="absolute bottom-10 right-10 w-72 h-72 bg-red-500/20 blur-3xl rounded-full"/>
+  {/* layered gradient */}
+  <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/30 to-black/60"/>
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.6))]"/>
 
   <div className="relative z-10 max-w-3xl px-4 sm:px-6">
 
-    <span className="bg-white/10 backdrop-blur-xl px-5 py-2 rounded-full text-xs sm:text-sm tracking-widest border border-white/30 shadow-lg">
+    <span className="bg-white/10 backdrop-blur-xl px-6 py-2 rounded-full text-xs sm:text-sm tracking-widest border border-white/30 shadow-lg">
       ● VIDA LIFE SCIENCES
     </span>
 
@@ -48,9 +46,9 @@ export default function Contact() {
 
 
 {/* ===== MAIN GRID ===== */}
-<div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+<div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
 
-  <div className="space-y-8 md:space-y-10">
+  <div className="space-y-10">
 
     <InfoCard
       title="TRAINING PROGRAMS"
@@ -84,15 +82,19 @@ export default function Contact() {
 
 
 {/* RIGHT FORM */}
-<div className="bg-white/70 backdrop-blur-2xl p-6 sm:p-10 md:p-12 rounded-3xl shadow-2xl border border-white/60">
+<div className="relative bg-white/60 backdrop-blur-2xl p-8 sm:p-12 rounded-[30px] shadow-[0_25px_60px_rgba(0,0,0,0.35)] hover:shadow-[0_30px_80px_rgba(0,0,0,0.45)] border border-white/50 overflow-hidden transition">
 
-  <h3 className="text-2xl sm:text-3xl font-bold mb-6 md:mb-8 text-gray-800">
+  {/* glow accents */}
+  <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-200/40 blur-3xl rounded-full"/>
+  <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-red-200/40 blur-3xl rounded-full"/>
+
+  <h3 className="text-3xl sm:text-4xl font-bold mb-10 text-gray-800">
     Enquire Now
   </h3>
 
-  <form className="space-y-5 md:space-y-6">
+  <form className="space-y-6">
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
       <Input placeholder="First Name"/>
       <Input placeholder="Last Name"/>
     </div>
@@ -100,7 +102,7 @@ export default function Contact() {
     <Input placeholder="Email"/>
     <Input placeholder="Phone Number"/>
 
-    <select className="w-full border-b border-gray-300 py-3 outline-none bg-transparent focus:border-blue-600">
+    <select className="w-full border-b border-gray-300 py-3 outline-none bg-transparent focus:border-blue-600 text-gray-600">
       <option>Select Subject</option>
       <option>Training</option>
       <option>Membership</option>
@@ -113,7 +115,7 @@ export default function Contact() {
       className="w-full border-b border-gray-300 py-3 outline-none bg-transparent focus:border-blue-600"
     />
 
-    <button className="w-full sm:w-auto bg-gradient-to-r from-[#1E3A8A] to-[#EF4444] text-white px-8 py-4 rounded-xl flex items-center justify-center gap-2 hover:scale-105 transition shadow-xl">
+    <button className="w-full sm:w-auto bg-gradient-to-r from-[#1E3A8A] to-[#EF4444] text-white px-10 py-4 rounded-xl flex items-center justify-center gap-2 hover:scale-105 hover:shadow-2xl transition font-semibold">
       Submit <Send size={18}/>
     </button>
 
@@ -123,7 +125,7 @@ export default function Contact() {
 
 
 {/* ADDRESSES */}
-<div className="max-w-7xl mx-auto px-4 sm:px-6 pb-16 md:pb-20 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+<div className="max-w-7xl mx-auto px-4 sm:px-6 pb-20 grid grid-cols-1 md:grid-cols-2 gap-12">
 
   <AddressCard
     title="Office Address"
@@ -143,15 +145,15 @@ Katraj, Pune 411046`}
 
 
 {/* MAP */}
-<div className="max-w-7xl mx-auto px-4 sm:px-6 pb-10">
+<div className="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
 
-  <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/40">
+  <div className="relative rounded-[30px] overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.35)] hover:shadow-[0_30px_80px_rgba(0,0,0,0.45)] border border-white/40 group transition">
 
-    <div className="absolute top-4 left-4 z-10 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full text-xs sm:text-sm text-white border border-white/30 shadow">
+    <div className="absolute top-5 left-5 z-10 bg-black/50 backdrop-blur-md px-5 py-2 rounded-full text-sm text-white border border-white/30 shadow">
       📍 Visit VIDA Life Sciences
     </div>
 
-    <div className="h-[280px] sm:h-[360px] md:h-[420px] w-full">
+    <div className="h-[300px] sm:h-[380px] md:h-[460px] w-full grayscale-[25%] group-hover:grayscale-0 transition duration-500">
       <iframe
         title="vida-map"
         src="https://maps.google.com/maps?q=Pune&t=&z=11&ie=UTF8&iwloc=&output=embed"
@@ -164,7 +166,7 @@ Katraj, Pune 411046`}
   </div>
 </div>
 
-<div className="h-12 sm:h-20 bg-gradient-to-b from-white to-blue-50"/>
+<div className="h-20 bg-gradient-to-b from-white to-blue-50"/>
 
 </section>
   );
@@ -175,13 +177,13 @@ Katraj, Pune 411046`}
 
 function InfoCard({ title, color, email, phones }) {
   return (
-    <div className="bg-white/70 backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden border border-white/50 hover:-translate-y-1 transition">
+    <div className="group bg-white/60 backdrop-blur-xl rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.35)] hover:shadow-[0_30px_80px_rgba(0,0,0,0.45)] overflow-hidden border border-white/50 hover:-translate-y-2 transition">
 
       <div className={`bg-gradient-to-r ${color} text-white px-6 py-4 font-semibold tracking-wide`}>
         {title}
       </div>
 
-      <div className="p-5 md:p-6 space-y-3 md:space-y-4 text-gray-700 text-sm sm:text-base">
+      <div className="p-6 space-y-4 text-gray-700">
 
         <p className="flex items-center gap-3">
           <Mail size={18}/> {email}
@@ -200,13 +202,13 @@ function InfoCard({ title, color, email, phones }) {
 
 function AddressCard({ title, address }) {
   return (
-    <div className="bg-white/70 backdrop-blur-xl p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl border border-white/50 hover:-translate-y-1 transition">
+    <div className="group bg-white/60 backdrop-blur-xl p-8 rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.35)] hover:shadow-[0_30px_80px_rgba(0,0,0,0.45)] border border-white/50 hover:-translate-y-2 transition">
 
-      <h4 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2 text-gray-800">
+      <h4 className="text-xl font-bold mb-5 flex items-center gap-3 text-gray-800">
         <MapPin/> {title}
       </h4>
 
-      <p className="text-gray-600 whitespace-pre-line text-sm sm:text-base">
+      <p className="text-gray-600 whitespace-pre-line">
         {address}
       </p>
     </div>
@@ -217,7 +219,7 @@ function Input({ placeholder }) {
   return (
     <input
       placeholder={placeholder}
-      className="w-full border-b border-gray-300 py-3 outline-none focus:border-blue-600 bg-transparent text-sm sm:text-base"
+      className="w-full border-b border-gray-300 py-3 outline-none focus:border-blue-600 bg-transparent placeholder-gray-400 transition"
     />
   );
 }

@@ -1,12 +1,22 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Search, Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState(null); // desktop dropdown
+  const [mobileDropdown, setMobileDropdown] = useState(null); // mobile dropdown
   const [mobileOpen, setMobileOpen] = useState(false);
   const navRef = useRef();
+  const location = useLocation();
 
+  // CLOSE MENUS ON ROUTE CHANGE
+  useEffect(() => {
+    setMobileOpen(false);
+    setOpen(null);
+    setMobileDropdown(null);
+  }, [location]);
+
+  // CLICK OUTSIDE (DESKTOP ONLY)
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (navRef.current && !navRef.current.contains(e.target)) {
@@ -78,27 +88,22 @@ export default function Navbar() {
     },
   ];
 
-  const toggleMenu = (i) => {
+  const toggleDesktop = (i) => {
     setOpen(open === i ? null : i);
+  };
+
+  const toggleMobile = (i) => {
+    setMobileDropdown(mobileDropdown === i ? null : i);
   };
 
   return (
     <>
       {/* TOP BAR */}
-      <div className="
-        bg-gradient-to-r from-brandBlue to-brandRed
-        text-white text-xs md:text-sm
-        px-4 md:px-10 py-2
-        flex justify-end gap-4 md:gap-6
-      ">
-        <a className="hover:opacity-80 transition">MEMBER SIGNUP</a>
-        <a className="hover:opacity-80 transition">MEMBER LOGIN</a>
+      <div className="bg-gradient-to-r from-brandBlue to-brandRed text-white text-xs md:text-sm px-4 md:px-10 py-2 flex justify-end gap-4 md:gap-6">
+        <a>MEMBER SIGNUP</a>
+        <a>MEMBER LOGIN</a>
 
-        <select className="
-          text-black rounded-full
-          px-2 md:px-3 py-1 text-xs
-          shadow-sm
-        ">
+        <select className="text-black rounded-full px-3 py-1 text-xs">
           <option>Select Language</option>
           <option>English</option>
           <option>Hindi</option>
@@ -108,55 +113,30 @@ export default function Navbar() {
       {/* NAVBAR */}
       <nav
         ref={navRef}
-        className="
-        sticky top-0 z-50
-        bg-white/90 backdrop-blur-xl
-        border-b
-        px-4 md:px-12 py-3 md:py-4
-        flex items-center justify-between
-      "
+        className="sticky top-0 z-50 bg-white border-b px-4 md:px-12 py-3 flex items-center justify-between"
       >
         {/* LOGO */}
-        <Link to="/" className="flex items-center gap-3">
-          <img
-            src="/logo.png"
-            alt="VIDA Logo"
-            className="h-10 md:h-12"
-          />
+        <Link to="/">
+          <img src="/logo.png" alt="VIDA Logo" className="h-10 md:h-12" />
         </Link>
 
         {/* DESKTOP MENU */}
         <div className="hidden lg:flex items-center gap-8 font-medium text-gray-700">
-
-          <Link to="/" className="font-semibold hover:text-brandBlue">
-            HOME
-          </Link>
+          <Link to="/" className="font-semibold">HOME</Link>
 
           {menu.map((item, i) => (
             <div key={i} className="relative">
-              <button
-                onClick={() => toggleMenu(i)}
-                className="hover:text-brandBlue"
-              >
+              <button onClick={() => toggleDesktop(i)}>
                 {item.title}
               </button>
 
               {open === i && (
-                <div className="
-                  absolute top-12 left-0
-                  bg-white shadow-xl rounded-xl
-                  w-60 border overflow-hidden
-                ">
+                <div className="absolute top-12 left-0 bg-white shadow-xl rounded-xl w-60 border">
                   {item.links.map((link, idx) => (
                     <Link
                       key={idx}
                       to={link.path}
-                      onClick={() => setOpen(null)}
-                      className="
-                        block px-5 py-3
-                        hover:bg-gradient-to-r
-                        hover:from-blue-50 hover:to-red-50
-                      "
+                      className="block px-5 py-3 hover:bg-gray-50"
                     >
                       {link.name}
                     </Link>
@@ -166,25 +146,15 @@ export default function Navbar() {
             </div>
           ))}
 
-          <Link to="/contact" className="hover:text-brandBlue">
-            CONTACT US
-          </Link>
+          <Link to="/contact">CONTACT US</Link>
         </div>
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-4">
-
-          {/* SEARCH */}
-          <button className="
-            hidden md:flex
-            bg-gradient-to-r from-brandBlue to-brandRed
-            text-white p-3 rounded-full
-            shadow-md hover:scale-110 transition
-          ">
+          <button className="hidden md:flex bg-gradient-to-r from-brandBlue to-brandRed text-white p-3 rounded-full">
             <Search size={18} />
           </button>
 
-          {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="lg:hidden"
@@ -196,36 +166,25 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-b shadow-md">
-
-          <Link
-            to="/"
-            className="block px-6 py-3 border-b"
-            onClick={()=>setMobileOpen(false)}
-          >
-            HOME
-          </Link>
+        <div className="lg:hidden fixed inset-0 top-[110px] bg-white z-40 overflow-y-auto shadow-lg">
+          <Link to="/" className="block px-6 py-4 border-b">HOME</Link>
 
           {menu.map((item, i) => (
             <div key={i}>
               <button
-                onClick={() => toggleMenu(i)}
-                className="w-full text-left px-6 py-3 border-b font-medium"
+                onClick={() => toggleMobile(i)}
+                className="w-full text-left px-6 py-4 border-b font-medium"
               >
                 {item.title}
               </button>
 
-              {open === i && (
+              {mobileDropdown === i && (
                 <div className="bg-gray-50">
                   {item.links.map((link, idx) => (
                     <Link
                       key={idx}
                       to={link.path}
-                      onClick={()=>{
-                        setMobileOpen(false);
-                        setOpen(null);
-                      }}
-                      className="block px-10 py-3 text-sm border-b"
+                      className="block px-10 py-4 border-b text-sm"
                     >
                       {link.name}
                     </Link>
@@ -235,11 +194,7 @@ export default function Navbar() {
             </div>
           ))}
 
-          <Link
-            to="/contact"
-            className="block px-6 py-3"
-            onClick={()=>setMobileOpen(false)}
-          >
+          <Link to="/contact" className="block px-6 py-4">
             CONTACT US
           </Link>
         </div>

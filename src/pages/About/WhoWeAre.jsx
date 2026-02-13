@@ -27,38 +27,54 @@ const stagger = {
 export default function WhoWeAre() {
   return (
     <main className="bg-white text-gray-800 overflow-hidden">
-
 {/* ================= HERO ================= */}
-<section className="relative min-h-[70vh] md:h-[92vh] flex items-center text-white overflow-hidden">
+<section className="relative min-h-[75vh] sm:min-h-[85vh] md:min-h-[92vh] flex items-center text-white overflow-hidden">
 
+  {/* BACKGROUND */}
   <div className="absolute inset-0">
+
     <img
-      src="/images/common/medical.png"
+      src="/images/common/medical2.jpg"
       className="w-full h-full object-cover scale-110"
       alt=""
     />
 
-    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60" />
-    <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_40%,rgba(0,0,0,0.55))]" />
+    {/* overlays */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_40%,rgba(0,0,0,0.6))]" />
 
-    <div className="absolute top-20 left-10 w-48 md:w-72 h-48 md:h-72 bg-red-500/20 blur-3xl rounded-full" />
-    <div className="absolute bottom-10 right-10 w-48 md:w-72 h-48 md:h-72 bg-blue-500/20 blur-3xl rounded-full" />
+    {/* glow accents */}
+    <div className="absolute top-10 sm:top-20 left-4 sm:left-10 w-40 sm:w-56 md:w-72 h-40 sm:h-56 md:h-72 bg-red-500/20 blur-3xl rounded-full" />
+    <div className="absolute bottom-6 sm:bottom-10 right-4 sm:right-10 w-40 sm:w-56 md:w-72 h-40 sm:h-56 md:h-72 bg-blue-500/20 blur-3xl rounded-full" />
+
   </div>
 
+  {/* CONTENT */}
   <motion.div
     variants={fadeUp}
     initial="hidden"
     animate="show"
-    className="relative z-10 max-w-6xl px-4 sm:px-6 md:px-10"
+    className="relative z-10 max-w-7xl px-4 sm:px-6 md:px-10"
   >
 
+    {/* TAG */}
     <div className="inline-block mb-6">
-      <div className="backdrop-blur-md bg-white/10 border border-white/20 px-5 py-2 rounded-full text-xs sm:text-sm tracking-widest uppercase text-blue-200">
+      <div className="backdrop-blur-md bg-white/10 border border-white/20 px-4 sm:px-5 py-2 rounded-full text-[10px] sm:text-xs md:text-sm tracking-widest uppercase text-blue-200">
         Corporate Profile • Est. 2011
       </div>
     </div>
 
-    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight drop-shadow-lg">
+    {/* TITLE */}
+    <h1 className="
+      text-3xl
+      sm:text-4xl
+      md:text-5xl
+      lg:text-6xl
+      xl:text-7xl
+      font-extrabold
+      leading-tight
+      drop-shadow-lg
+    ">
       Precision. Discipline.
       <br />
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-blue-400">
@@ -66,60 +82,181 @@ export default function WhoWeAre() {
       </span>
     </h1>
 
-    <p className="mt-6 text-base sm:text-lg text-gray-200 max-w-3xl leading-relaxed">
+    {/* DESCRIPTION */}
+    <p className="
+      mt-6
+      text-sm
+      sm:text-base
+      md:text-lg
+      text-gray-200
+      max-w-xl
+      md:max-w-2xl
+      lg:max-w-3xl
+      leading-relaxed
+    ">
       Vida Life Sciences operates exclusively in medical sterilization,
       CSSD solutions, and healthcare equipment manufacturing since 2011 —
       helping hospitals achieve world-class infection control and compliance.
     </p>
 
+    {/* BUTTONS */}
     <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 mt-10">
+
       <Link
         to="/contact"
-        className="px-6 sm:px-8 py-3 sm:py-4 bg-red-500 hover:bg-red-600 transition rounded-full font-semibold shadow-lg text-center"
+        className="px-6 sm:px-8 py-3 sm:py-4 bg-red-500 hover:bg-red-600 transition rounded-full font-semibold shadow-lg text-center w-full sm:w-auto"
       >
         Get in Touch
       </Link>
 
       <Link
         to="/about"
-        className="px-6 sm:px-8 py-3 sm:py-4 border border-white/40 hover:bg-white/10 transition rounded-full font-semibold backdrop-blur-md text-center"
+        className="px-6 sm:px-8 py-3 sm:py-4 border border-white/40 hover:bg-white/10 transition rounded-full font-semibold backdrop-blur-md text-center w-full sm:w-auto"
       >
         Explore VIDA
       </Link>
+
     </div>
 
-    <div className="flex flex-wrap gap-8 sm:gap-10 mt-14">
+    {/* STATS */}
+    <div className="flex flex-wrap gap-6 sm:gap-8 md:gap-10 mt-12 md:mt-14">
+
       <StatBlock number="300+" label="Hospitals Supported" color="text-red-400"/>
       <StatBlock number="14+" label="Years Experience" color="text-blue-400"/>
       <StatBlock number="100%" label="Medical Focus" color="text-white"/>
+
     </div>
 
   </motion.div>
 </section>
 
 
-{/* ================= PURPOSE ================= */}
-<section className="relative py-20 md:py-28 overflow-hidden">
+{/* ================= WHO WE ARE INTRO ================= */}
+<section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-white to-blue-50">
 
-  <div className="absolute -top-20 -left-20 w-72 md:w-96 h-72 md:h-96 bg-blue-100 rounded-full blur-3xl opacity-40" />
-  <div className="absolute bottom-0 right-0 w-72 md:w-96 h-72 md:h-96 bg-red-100 rounded-full blur-3xl opacity-40" />
+  {/* background glow */}
+  <div className="absolute -top-20 -left-20 w-72 md:w-96 h-72 md:h-96 bg-blue-200/40 blur-3xl rounded-full" />
+  <div className="absolute bottom-0 -right-20 w-72 md:w-96 h-72 md:h-96 bg-red-200/40 blur-3xl rounded-full" />
 
   <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 md:gap-20 items-center relative z-10">
 
-    <motion.div variants={fadeUp} initial="hidden" whileInView="show">
+    {/* LEFT IMAGE */}
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="relative order-1 md:order-1"
+    >
+      <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-red-500/20 blur-2xl rounded-3xl" />
 
+      <img
+        src="/images/common/healthcare-training1.png"
+        alt="VIDA Healthcare Training"
+        className="relative rounded-3xl shadow-2xl object-cover w-full h-[320px] sm:h-[420px] md:h-[520px]"
+      />
+
+      {/* floating badge */}
+      <div className="absolute -bottom-6 sm:-bottom-8 -left-4 sm:-left-8 backdrop-blur-lg bg-white/80 p-4 sm:p-6 rounded-2xl shadow-xl w-52 sm:w-64 border">
+        <h4 className="font-bold text-blue-900 text-base sm:text-lg">
+          VIDA Academy
+        </h4>
+        <p className="text-gray-600 text-xs sm:text-sm">
+          Professional healthcare training programs
+        </p>
+      </div>
+    </motion.div>
+
+    {/* RIGHT CONTENT */}
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="order-2 md:order-2"
+    >
       <span className="inline-block mb-4 px-4 py-2 text-xs sm:text-sm font-semibold uppercase rounded-full bg-blue-100 text-blue-700">
+        Who We Are
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+        VIDA Life Sciences —
+        <br />
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-red-500">
+          Healthcare & Training Experts
+        </span>
+      </h2>
+
+      <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
+        VIDA Life Sciences is a specialized healthcare organization focused
+        on sterilization systems, infection control, and CSSD excellence.
+        Since 2011, we have partnered with hospitals and healthcare
+        institutions to build safe, compliant, and efficient clinical
+        environments.
+      </p>
+
+      <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
+        Through VIDA Academy, we deliver structured healthcare training,
+        practical workshops, and certification programs that empower
+        professionals to meet global patient safety and sterilization
+        standards.
+      </p>
+
+      {/* stats */}
+      <div className="flex flex-wrap gap-10">
+        <div>
+          <h3 className="text-3xl font-bold text-blue-700">300+</h3>
+          <p className="text-gray-500 text-sm">Hospitals Supported</p>
+        </div>
+
+        <div>
+          <h3 className="text-3xl font-bold text-red-500">14+</h3>
+          <p className="text-gray-500 text-sm">Years Experience</p>
+        </div>
+
+        <div>
+          <h3 className="text-3xl font-bold text-blue-900">100%</h3>
+          <p className="text-gray-500 text-sm">Healthcare Focus</p>
+        </div>
+      </div>
+    </motion.div>
+
+  </div>
+</section>
+
+{/* ================= PURPOSE ================= */}
+<section className="relative py-20 md:py-28 overflow-hidden">
+
+  {/* background glows */}
+  <div className="absolute -top-20 -left-20 w-72 md:w-96 h-72 md:h-96 bg-blue-200/30 rounded-full blur-3xl" />
+  <div className="absolute bottom-0 right-0 w-72 md:w-96 h-72 md:h-96 bg-red-200/30 rounded-full blur-3xl" />
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 md:gap-20 items-center relative z-10">
+
+    {/* LEFT DARK PANEL */}
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      className="relative p-8 sm:p-10 md:p-12 rounded-3xl bg-gradient-to-br from-[#0B1220] via-[#111827] to-[#1F2937] text-white shadow-2xl overflow-hidden"
+    >
+
+      {/* subtle glow inside dark card */}
+      <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/20 blur-3xl rounded-full"/>
+      <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-red-500/20 blur-3xl rounded-full"/>
+
+      <span className="inline-block mb-4 px-4 py-2 text-xs sm:text-sm font-semibold uppercase rounded-full bg-white/10 text-blue-300 border border-white/10">
         Our Purpose
       </span>
 
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
         Our Purpose in{" "}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-red-500">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-red-400">
           Healthcare
         </span>
       </h2>
 
-      <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+      <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
         Healthcare environments demand precision, discipline, and accountability...
       </p>
 
@@ -130,17 +267,31 @@ export default function WhoWeAre() {
           "Delivering repeatable and auditable systems",
           "Training healthcare professionals",
         ].map((item, i) => (
-          <motion.div key={i} whileHover={{ x: 6 }}
-            className="flex items-center gap-4 p-4 rounded-xl bg-white shadow-md">
-            <div className="w-7 h-7 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-red-500 text-white">✓</div>
-            <p className="text-gray-700 text-sm sm:text-base">{item}</p>
+          <motion.div
+            key={i}
+            whileHover={{ x: 6 }}
+            className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition"
+          >
+            <div className="w-7 h-7 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-red-500 text-white text-sm">
+              ✓
+            </div>
+            <p className="text-gray-200 text-sm sm:text-base">
+              {item}
+            </p>
           </motion.div>
         ))}
       </div>
 
     </motion.div>
 
-    <motion.div variants={fadeUp} initial="hidden" whileInView="show" className="relative">
+
+    {/* RIGHT IMAGE SIDE */}
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      className="relative"
+    >
 
       <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-red-500/20 blur-2xl rounded-3xl" />
 
@@ -149,8 +300,10 @@ export default function WhoWeAre() {
         className="relative rounded-3xl shadow-2xl object-cover w-full h-[320px] sm:h-[420px] md:h-[520px]"
       />
 
-      <div className="absolute -bottom-6 sm:-bottom-8 -left-4 sm:-left-8 backdrop-blur-lg bg-white/80 p-4 sm:p-6 rounded-2xl shadow-xl w-52 sm:w-64">
-        <h4 className="font-bold text-blue-900 text-base sm:text-lg">14+ Years</h4>
+      <div className="absolute -bottom-6 sm:-bottom-8 -left-4 sm:-left-8 backdrop-blur-lg bg-white/90 p-4 sm:p-6 rounded-2xl shadow-xl w-52 sm:w-64 border border-white/40">
+        <h4 className="font-bold text-blue-900 text-base sm:text-lg">
+          14+ Years
+        </h4>
         <p className="text-gray-600 text-xs sm:text-sm">
           Delivering sterilization excellence since 2011
         </p>
@@ -160,6 +313,7 @@ export default function WhoWeAre() {
 
   </div>
 </section>
+
 
 
 {/* ================= WHAT WE DO ================= */}

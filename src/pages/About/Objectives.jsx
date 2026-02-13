@@ -50,7 +50,7 @@ export default function Objectives() {
 
   <div className="absolute inset-0">
     <img
-      src="/images/common/medical1.png"
+      src="/images/common/medical_obj3.jpg"
       alt="Healthcare"
       className="w-full h-full object-cover object-center"
     />
