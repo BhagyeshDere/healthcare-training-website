@@ -118,7 +118,7 @@ export default function Footer() {
           </p>
 
           <p>
-            Web Design & Development : Interactive
+            Designed by DW Innovation Pvt. Ltd
           </p>
 
         </div>

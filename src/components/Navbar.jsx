@@ -3,8 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Search, Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(null); // desktop dropdown
-  const [mobileDropdown, setMobileDropdown] = useState(null); // mobile dropdown
+  const [open, setOpen] = useState(null);
+  const [mobileDropdown, setMobileDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navRef = useRef();
   const location = useLocation();
@@ -16,7 +16,7 @@ export default function Navbar() {
     setMobileDropdown(null);
   }, [location]);
 
-  // CLICK OUTSIDE (DESKTOP ONLY)
+  // CLICK OUTSIDE (DESKTOP)
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (navRef.current && !navRef.current.contains(e.target)) {
@@ -35,6 +35,7 @@ export default function Navbar() {
         { name: "Who We Are", path: "/who-we-are" },
         { name: "Objectives", path: "/objectives" },
         { name: "Leadership", path: "/leadership" },
+        { name: "Our Journey", path: "/our-journey" }, // ✅ FIXED
       ],
     },
     {

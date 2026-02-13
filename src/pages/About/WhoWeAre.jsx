@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import JourneySection from "../../components/JourneySection";
+
 
 import {
   HeartPulse,
@@ -315,12 +315,16 @@ export default function WhoWeAre() {
 </section>
 
 
-
 {/* ================= WHAT WE DO ================= */}
-<section className="relative py-20 md:py-28 overflow-hidden">
+<section className="relative py-24 md:py-32 overflow-hidden">
 
-  <div className="text-center mb-16 px-4">
-    <span className="px-5 py-2 rounded-full bg-blue-100 text-blue-700 text-xs sm:text-sm font-semibold">
+  {/* soft background glow */}
+  <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-200/40 blur-3xl rounded-full"/>
+  <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-red-200/40 blur-3xl rounded-full"/>
+
+  <div className="text-center mb-20 px-4 relative z-10">
+
+    <span className="px-6 py-2 rounded-full bg-blue-100 text-blue-700 text-xs sm:text-sm font-semibold shadow-sm">
       Our Expertise
     </span>
 
@@ -331,16 +335,17 @@ export default function WhoWeAre() {
       </span>
     </h2>
 
-    <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-sm sm:text-base">
+    <p className="text-gray-600 mt-5 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
       Delivering reliable sterilization systems...
     </p>
+
   </div>
 
   <motion.div
     variants={stagger}
     initial="hidden"
     whileInView="show"
-    className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 max-w-7xl mx-auto px-4 sm:px-6"
+    className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14 max-w-7xl mx-auto px-4 sm:px-6 relative z-10"
   >
     <ExpertiseCard icon={<Factory size={30}/>} title="CSSD Manufacturing"
       text="Manufacturing advanced CSSD devices and stainless steel hospital furniture." />
@@ -351,17 +356,27 @@ export default function WhoWeAre() {
     <ExpertiseCard icon={<ShieldCheck size={30}/>} title="Operational Support"
       text="Comprehensive maintenance programs and training." />
   </motion.div>
+
 </section>
 
-
 {/* ================= TRAINING ================= */}
-<section className="relative py-20 md:py-28 overflow-hidden text-white">
-  <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-red-900" />
+<section className="relative py-24 md:py-32 overflow-hidden text-white">
 
-  <motion.div variants={fadeUp} initial="hidden" whileInView="show"
-    className="relative z-10 text-center px-4 sm:px-6">
+  {/* premium gradient bg */}
+  <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-slate-900 to-red-900"/>
 
-    <span className="inline-block px-5 py-2 mb-6 text-xs sm:text-sm rounded-full bg-white/10 border border-white/20">
+  {/* glow accents */}
+  <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-blue-600/20 blur-3xl"/>
+  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-red-600/20 blur-3xl"/>
+
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="show"
+    className="relative z-10 text-center px-4 sm:px-6"
+  >
+
+    <span className="inline-block px-6 py-2 mb-6 text-xs sm:text-sm rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
       VIDA Academy
     </span>
 
@@ -372,11 +387,11 @@ export default function WhoWeAre() {
       </span>
     </h2>
 
-    <p className="max-w-3xl mx-auto text-sm sm:text-lg mt-6 text-gray-200">
+    <p className="max-w-3xl mx-auto text-sm sm:text-lg mt-6 text-gray-200 leading-relaxed">
       VIDA empowers hospital teams with hands-on CSSD training...
     </p>
 
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 mt-14 max-w-6xl mx-auto">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mt-16 max-w-6xl mx-auto">
       <GlassCard title="Hands-On Learning" text="Real-world CSSD simulations."/>
       <GlassCard title="Certified Programs" text="Structured compliance courses."/>
       <GlassCard title="Expert Mentors" text="Training by professionals."/>
@@ -385,14 +400,16 @@ export default function WhoWeAre() {
   </motion.div>
 </section>
 
-<JourneySection/>
-
 {/* ================= CTA ================= */}
-<section className="relative py-20 md:py-28 text-center overflow-hidden">
+<section className="relative py-24 md:py-32 text-center overflow-hidden bg-gradient-to-b from-white to-blue-50">
+
+  {/* subtle glows */}
+  <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-80 h-80 bg-blue-200/30 blur-3xl"/>
+  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-red-200/30 blur-3xl"/>
 
   <motion.div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
 
-    <div className="inline-block mb-6 px-5 py-2 bg-white/80 text-blue-700 rounded-full text-xs sm:text-sm border">
+    <div className="inline-block mb-6 px-6 py-2 bg-white/80 backdrop-blur-md text-blue-700 rounded-full text-xs sm:text-sm border shadow-sm">
       Trusted Healthcare Partner
     </div>
 
@@ -403,24 +420,27 @@ export default function WhoWeAre() {
       </span>
     </h2>
 
-    <p className="max-w-2xl mx-auto text-base sm:text-lg text-gray-600">
+    <p className="max-w-2xl mx-auto text-base sm:text-lg text-gray-600 leading-relaxed">
       A responsible healthcare partner focused on compliance and safety.
     </p>
 
-    <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-12">
+    <div className="flex flex-col sm:flex-row justify-center gap-5 sm:gap-8 mt-14">
+
       <Link to="/contact"
-        className="px-8 py-4 bg-gradient-to-r from-red-500 to-blue-600 text-white rounded-full">
+        className="px-10 py-4 bg-gradient-to-r from-red-500 to-blue-600 text-white rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition font-semibold">
         Start a Conversation
       </Link>
 
       <Link to="/who-we-are"
-        className="px-8 py-4 border-2 border-blue-600 text-blue-700 rounded-full">
+        className="px-10 py-4 border-2 border-blue-600 text-blue-700 rounded-full hover:bg-blue-50 transition font-semibold">
         Learn More
       </Link>
+
     </div>
 
   </motion.div>
 </section>
+
 
 </main>
 );
