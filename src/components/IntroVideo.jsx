@@ -23,52 +23,41 @@ export default function IntroVideo() {
   }, []);
 
   // ANIMATION VALUES
-  const scale = 0.85 + progress * 0.25;
-  const blur = 8 - progress * 8;
-  const rotate = 2 - progress * 2;
-  const textOpacity = progress * 1.4;
-  const textY = 60 - progress * 60;
+  const scale = 0.9 + progress * 0.15;
+  const blur = 6 - progress * 6;
+  const rotate = 1.5 - progress * 1.5;
+  const textOpacity = progress * 1.2;
+  const textY = 50 - progress * 50;
 
   return (
     <section
       ref={sectionRef}
       className="
-        py-16 sm:py-24 md:py-32
+        py-14 sm:py-20 md:py-28 lg:py-32
         bg-gradient-to-b from-white via-blue-50 to-white
         overflow-hidden
       "
     >
 
       {/* HEADER */}
-      <div className="
-        text-center 
-        mb-12 sm:mb-16 
-        px-4 sm:px-6
-      ">
+      <div className="text-center mb-10 sm:mb-14 md:mb-16 px-4 sm:px-6">
         <span className="
-          text-brandRed 
-          font-semibold 
-          uppercase 
-          tracking-wider
+          text-brandRed font-semibold uppercase tracking-wider
           text-xs sm:text-sm
         ">
           About VIDA
         </span>
 
         <h2 className="
-          text-3xl sm:text-4xl md:text-5xl
-          font-bold 
-          text-brandBlue 
-          mt-4
+          text-2xl sm:text-3xl md:text-4xl lg:text-5xl
+          font-bold text-brandBlue mt-4
+          leading-tight
         ">
           Transforming Healthcare Through Excellence
         </h2>
 
         <p className="
-          text-gray-600 
-          mt-4 
-          max-w-2xl 
-          mx-auto
+          text-gray-600 mt-4 max-w-2xl mx-auto
           text-sm sm:text-base
         ">
           Discover how VIDA Life Sciences empowers healthcare professionals
@@ -77,7 +66,7 @@ export default function IntroVideo() {
       </div>
 
       {/* VIDEO CONTAINER */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         <div
           style={{
@@ -85,13 +74,11 @@ export default function IntroVideo() {
             filter: `blur(${blur}px)`,
           }}
           className="
-            relative 
-            rounded-2xl sm:rounded-3xl
-            overflow-hidden 
-            shadow-2xl 
-            transition-all 
-            duration-300 
-            ease-out
+            relative
+            rounded-xl sm:rounded-2xl md:rounded-3xl
+            overflow-hidden
+            shadow-2xl
+            transition-all duration-300 ease-out
           "
         >
 
@@ -103,86 +90,35 @@ export default function IntroVideo() {
             loop
             playsInline
             className="
-              w-full 
-              h-[260px] sm:h-[380px] md:h-[520px]
+              w-full
+              h-[220px] 
+              sm:h-[320px] 
+              md:h-[420px]
+              lg:h-[520px]
+              xl:h-[600px]
               object-cover
             "
           />
 
           {/* DARK OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"/>
 
           {/* COLOR OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-r from-brandBlue/20 to-brandRed/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brandBlue/20 to-brandRed/20"/>
 
           {/* FLOATING BADGE */}
           <div className="
-            absolute 
-            top-4 sm:top-6 
-            left-4 sm:left-6
-            bg-white/20 
-            backdrop-blur-md 
-            px-3 sm:px-5 
-            py-1.5 sm:py-2
-            rounded-full 
-            text-white 
-            text-xs sm:text-sm 
+            absolute top-3 sm:top-5 left-3 sm:left-6
+            bg-white/20 backdrop-blur-md
+            px-3 sm:px-5 py-1.5 sm:py-2
+            rounded-full text-white
+            text-[10px] sm:text-sm
             border border-white/30
           ">
             VIDA Life Sciences
           </div>
 
-          {/* GLASS TEXT CARD */}
-          <div
-            style={{
-              opacity: textOpacity,
-              transform: `translateY(${textY}px)`,
-            }}
-            className="
-              absolute 
-              left-4 right-4 sm:left-10 sm:right-auto
-              bottom-4 sm:bottom-10
-              bg-white/15 
-              backdrop-blur-lg 
-              p-5 sm:p-8 
-              rounded-xl sm:rounded-2xl
-              text-white 
-              max-w-full sm:max-w-md
-              border border-white/20 
-              shadow-xl 
-              transition-all 
-              duration-300
-            "
-          >
-            <h3 className="
-              text-xl sm:text-2xl md:text-3xl
-              font-bold 
-              mb-3
-            ">
-              Shaping the Future of Healthcare
-            </h3>
-
-            <p className="
-              text-gray-200 
-              mb-4
-              text-sm sm:text-base
-            ">
-              Education • Certification • Research • Global Impact
-            </p>
-
-            <button className="
-              bg-gradient-to-r from-brandBlue to-brandRed 
-              px-5 sm:px-6 
-              py-2.5 sm:py-3 
-              rounded-full 
-              font-semibold 
-              text-sm sm:text-base
-              hover:scale-105 
-              transition
-            ">
-              Learn More
-            </button>
-          </div>
+         
 
         </div>
 
