@@ -28,8 +28,7 @@ const stagger = {
 export default function WhoWeAre() {
   return (
     <main className="bg-white text-gray-800 overflow-hidden">
-
-     {/* ================= HERO ================= */}
+{/* ================= HERO ================= */}
 <section className="relative h-[92vh] flex items-center text-white overflow-hidden">
 
   {/* BACKGROUND */}
@@ -42,8 +41,14 @@ export default function WhoWeAre() {
       alt=""
     />
 
-    {/* Gradient overlay */}
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-950/95 via-blue-900/80 to-red-600/70" />
+    {/* ✅ DARK GRADIENT OVERLAY */}
+    <div className="absolute inset-0 
+                    bg-gradient-to-r 
+                    from-black/60 via-black/40 to-black/60" />
+
+    {/* ✅ VIGNETTE SHADOW (edges darker) */}
+    <div className="absolute inset-0 
+                    bg-[radial-gradient(circle,transparent_40%,rgba(0,0,0,0.55))]" />
 
     {/* Glow effects */}
     <div className="absolute top-20 left-10 w-72 h-72 bg-red-500/20 blur-3xl rounded-full" />
@@ -123,6 +128,7 @@ export default function WhoWeAre() {
   </motion.div>
 
 </section>
+
 
       {/* ================= PURPOSE ================= */}
 <section className="relative py-28 overflow-hidden">
