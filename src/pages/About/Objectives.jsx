@@ -44,10 +44,10 @@ export default function Objectives() {
 
   return (
     <main className="bg-gradient-to-b from-[#F8FBFF] to-white text-gray-800 overflow-hidden">
-{/* ================= HERO ================= */}
-<section className="relative min-h-[90vh] flex items-center justify-center text-center overflow-hidden">
 
-  {/* Background Image */}
+{/* ================= HERO ================= */}
+<section className="relative min-h-[70vh] md:min-h-[90vh] flex items-center justify-center text-center overflow-hidden">
+
   <div className="absolute inset-0">
     <img
       src="/images/common/medical1.png"
@@ -55,89 +55,55 @@ export default function Objectives() {
       className="w-full h-full object-cover object-center"
     />
 
-    {/* ✅ Dark Gradient Overlay */}
-    <div className="absolute inset-0 
-                    bg-gradient-to-b 
-                    from-black/60 
-                    via-black/40 
-                    to-black/60" />
-
-    {/* ✅ Soft Vignette Shadow */}
-    <div className="absolute inset-0 
-                    bg-[radial-gradient(circle,transparent_40%,rgba(0,0,0,0.5))]" />
+    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_40%,rgba(0,0,0,0.5))]" />
   </div>
 
-  {/* Glow Effects */}
-  <div className="absolute -top-20 left-0 w-96 h-96 bg-blue-500/20 blur-3xl rounded-full"/>
-  <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-500/20 blur-3xl rounded-full"/>
+  <div className="absolute -top-20 left-0 w-72 md:w-96 h-72 md:h-96 bg-blue-500/20 blur-3xl rounded-full"/>
+  <div className="absolute bottom-0 right-0 w-72 md:w-96 h-72 md:h-96 bg-red-500/20 blur-3xl rounded-full"/>
 
-  {/* Content */}
   <motion.div
     initial={{opacity:0, y:40}}
     animate={{opacity:1, y:0}}
     transition={{duration:1}}
-    className="relative z-10 px-6 max-w-4xl"
+    className="relative z-10 px-4 sm:px-6 max-w-4xl"
   >
 
-    {/* Glass Badge */}
-    <div className="inline-block mb-6 px-6 py-2 
-                    bg-white/10 backdrop-blur-md 
-                    border border-white/20 
-                    text-blue-100
-                    rounded-full 
-                    text-sm tracking-widest">
+    <div className="inline-block mb-6 px-5 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-blue-100 rounded-full text-xs sm:text-sm tracking-widest">
       Healthcare Quality • Training • Compliance
     </div>
 
-    {/* Heading */}
-    <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight">
+    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
       VIDA{" "}
-      <span className="text-transparent bg-clip-text 
-                       bg-gradient-to-r 
-                       from-cyan-300 to-blue-400">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
         Objectives
       </span>
     </h1>
 
-    {/* Description */}
-    <p className="mt-6 text-lg md:text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto">
+    <p className="mt-6 text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto">
       Driving healthcare quality, sterilization excellence,
       and professional training to build safer,
       compliant and future-ready hospitals.
     </p>
 
-    {/* CTA Buttons */}
-    <div className="flex justify-center gap-6 mt-10 flex-wrap">
-
-      <button className="px-10 py-4 
-                         bg-gradient-to-r from-blue-600 to-red-500 
-                         text-white font-semibold 
-                         rounded-full shadow-xl
-                         hover:scale-105 transition duration-300">
+    <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-10">
+      <button className="px-8 py-3 sm:px-10 sm:py-4 bg-gradient-to-r from-blue-600 to-red-500 text-white font-semibold rounded-full shadow-xl hover:scale-105 transition">
         Explore Programs
       </button>
 
-      <button className="px-10 py-4 
-                         border border-white/40 
-                         text-white 
-                         rounded-full
-                         backdrop-blur-md
-                         hover:bg-white/10 transition duration-300">
+      <button className="px-8 py-3 sm:px-10 sm:py-4 border border-white/40 text-white rounded-full backdrop-blur-md hover:bg-white/10 transition">
         Contact VIDA
       </button>
-
     </div>
 
   </motion.div>
-
 </section>
 
 
+{/* ================= OBJECTIVES ================= */}
+<section className="max-w-7xl mx-auto px-4 sm:px-6 mt-12 md:mt-24 pb-20 md:pb-24">
 
-    {/* ================= OBJECTIVES SPLIT LAYOUT ================= */}
-<section className="max-w-7xl mx-auto px-6 mt-16 md:mt-24 pb-24">
-
-  <div className="space-y-20">
+  <div className="space-y-12 md:space-y-20">
 
     {objectives.map((item,i)=>(
 
@@ -146,91 +112,54 @@ export default function Objectives() {
         initial={{opacity:0,y:40}}
         whileInView={{opacity:1,y:0}}
         viewport={{once:true}}
-        className="group grid md:grid-cols-2 gap-0 items-stretch
-                   border border-gray-200 overflow-hidden rounded-2xl
-                   bg-white
-                   shadow-[-20px_20px_40px_rgba(0,0,0,0.06)]
-                   hover:shadow-[-25px_25px_60px_rgba(0,0,0,0.12)]
-                   transition duration-500"
+        className="group grid md:grid-cols-2 border border-gray-200 overflow-hidden rounded-2xl bg-white shadow-[-20px_20px_40px_rgba(0,0,0,0.06)] hover:shadow-[-25px_25px_60px_rgba(0,0,0,0.12)] transition"
       >
 
-        {/* LEFT BIG NUMBER */}
-        <div className="relative p-10 md:p-14 bg-white">
+        {/* LEFT NUMBER */}
+        <div className="relative p-8 sm:p-10 md:p-14 bg-white text-center md:text-left">
 
-          <h1 className="text-[90px] md:text-[130px] font-extrabold
-                         text-blue-100 group-hover:text-blue-200
-                         transition duration-500 leading-none">
+          <h1 className="text-[60px] sm:text-[90px] md:text-[130px] font-extrabold text-blue-100 group-hover:text-blue-200 transition leading-none">
             {String(i+1).padStart(2,"0")}
           </h1>
 
-          {/* Accent Line */}
-          <div className="absolute left-10 bottom-10 h-1 w-24
-                          bg-gradient-to-r
-                          from-blue-600 to-red-500
-                          group-hover:w-44
-                          transition-all duration-500"/>
+          <div className="absolute left-1/2 md:left-10 -translate-x-1/2 md:translate-x-0 bottom-6 md:bottom-10 h-1 w-20 md:w-24 bg-gradient-to-r from-blue-600 to-red-500 group-hover:w-40 md:group-hover:w-44 transition-all"/>
 
-          {/* Small Label */}
-          <p className="mt-6 text-sm tracking-widest uppercase
-                        text-gray-400">
+          <p className="mt-6 text-xs sm:text-sm tracking-widest uppercase text-gray-400">
             VIDA Life Sciences Objective
           </p>
 
         </div>
 
 
-        {/* RIGHT CONTENT — DARK PANEL */}
-        <div className="space-y-6 p-10 md:p-14
-                        bg-gradient-to-br
-                        from-blue-950 via-slate-900 to-blue-900
-                        text-white">
+        {/* RIGHT PANEL */}
+        <div className="space-y-6 p-8 sm:p-10 md:p-14 bg-gradient-to-br from-blue-950 via-slate-900 to-blue-900 text-white">
 
-          {/* Icon + Title */}
-          <div className="flex items-center gap-5">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
 
-            <div className="w-14 h-14 flex items-center justify-center
-                            rounded-xl text-white text-xl
-                            bg-gradient-to-r from-blue-600 to-red-500
-                            shadow-lg
-                            group-hover:scale-110 transition">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-red-500 shadow-lg">
               {item.icon}
             </div>
 
-            <h3 className="text-2xl md:text-3xl font-bold text-white">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
               {item.title}
             </h3>
 
           </div>
 
-          {/* Main Text */}
-          <p className="text-blue-100 leading-relaxed text-lg">
+          <p className="text-blue-100 leading-relaxed text-base sm:text-lg">
             {item.text}
           </p>
 
-          {/* Premium Description */}
-          <p className="text-blue-200/90 leading-relaxed">
+          <p className="text-blue-200/90 leading-relaxed text-sm sm:text-base">
             VIDA Life Sciences is committed to long-term healthcare
             improvement through structured systems, certified training,
-            and reliable sterilization practices. Each objective supports
-            safer clinical environments, regulatory readiness,
-            and operational excellence for hospitals and medical institutions.
+            and reliable sterilization practices...
           </p>
 
-          {/* Mini Highlights */}
-          <div className="flex flex-wrap gap-6 text-sm text-blue-200">
-
-            <span className="flex items-center gap-2">
-              ✔ Quality Driven
-            </span>
-
-            <span className="flex items-center gap-2">
-              ✔ Compliance Focused
-            </span>
-
-            <span className="flex items-center gap-2">
-              ✔ Healthcare Ready
-            </span>
-
+          <div className="flex flex-wrap gap-4 sm:gap-6 text-xs sm:text-sm text-blue-200">
+            <span>✔ Quality Driven</span>
+            <span>✔ Compliance Focused</span>
+            <span>✔ Healthcare Ready</span>
           </div>
 
         </div>
@@ -243,154 +172,90 @@ export default function Objectives() {
 
 </section>
 
-{/* ================= CERTIFICATES AUTO SCROLL ================= */}
-<section className="relative py-24 overflow-hidden 
-                    bg-gradient-to-br 
-                    from-blue-950 via-slate-900 to-blue-950">
 
-  {/* Heading */}
-  <div className="text-center mb-14">
-    <h2 className="text-4xl md:text-5xl font-extrabold text-white">
+{/* ================= CERTIFICATES ================= */}
+<section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-blue-950 via-slate-900 to-blue-950">
+
+  <div className="text-center mb-10 md:mb-14 px-4">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
       Certifications & Compliance
     </h2>
-
-    <p className="mt-4 text-blue-200">
-      International certifications reflecting VIDA’s commitment
-      to global healthcare quality standards.
+    <p className="mt-4 text-blue-200 text-sm sm:text-base">
+      International certifications reflecting VIDA’s commitment to global healthcare quality standards.
     </p>
   </div>
 
-
-  {/* Fade edges (dark version) */}
-  <div className="pointer-events-none absolute left-0 top-0 h-full w-32 
-                  bg-gradient-to-r from-blue-950 to-transparent z-10"/>
-
-  <div className="pointer-events-none absolute right-0 top-0 h-full w-32 
-                  bg-gradient-to-l from-blue-950 to-transparent z-10"/>  
-
-
-  {/* Scroll Wrapper */}
   <div
-    ref={el => {
-      if (!el) return;
-
-      let pos = 0;
-
-      const scroll = () => {
-        pos += 0.4;
-        if (pos >= el.scrollWidth - el.clientWidth) pos = 0;
-        el.scrollLeft = pos;
+    ref={el=>{
+      if(!el) return;
+      let pos=0;
+      const scroll=()=>{
+        pos+=0.4;
+        if(pos>=el.scrollWidth-el.clientWidth) pos=0;
+        el.scrollLeft=pos;
         requestAnimationFrame(scroll);
       };
-
       scroll();
     }}
-    className="flex gap-12 overflow-hidden px-10"
+    className="flex gap-6 sm:gap-12 overflow-hidden px-4 sm:px-10"
   >
 
-    {[
-      "/images/certificates/cert1.png",
-      "/images/certificates/cert2.png",
-      "/images/certificates/cert3.png",
-      "/images/certificates/cert4.png",
-      "/images/certificates/cert5.png",
-      "/images/certificates/cert6.png",
-    ].map((img,i)=>(
-
-      <div key={i}
-           className="min-w-[320px] 
-                      bg-white/95 rounded-2xl 
-                      shadow-2xl 
-                      border border-white/20
-                      hover:scale-105 transition duration-300
-                      p-4">
-
-        <img
-          src={img}
-          alt="Certificate"
-          className="w-full h-[420px] object-contain"
-        />
-
+    {["/images/certificates/cert1.png","/images/certificates/cert2.png","/images/certificates/cert3.png","/images/certificates/cert4.png","/images/certificates/cert5.png","/images/certificates/cert6.png"].map((img,i)=>(
+      <div key={i} className="min-w-[220px] sm:min-w-[320px] bg-white/95 rounded-2xl shadow-2xl p-3 sm:p-4">
+        <img src={img} alt="" className="w-full h-[260px] sm:h-[420px] object-contain"/>
       </div>
     ))}
 
   </div>
 
-
-  {/* Bottom Trust Line */}
-  <div className="flex justify-center gap-10 mt-16 
-                  text-blue-200 text-sm">
-
+  <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mt-12 md:mt-16 text-blue-200 text-xs sm:text-sm">
     <span>🌍 ISO Certified</span>
     <span>🛡 GMP Compliant</span>
     <span>✔ Global Standards</span>
-
   </div>
 
 </section>
 
 
+{/* ================= TRAINING ================= */}
+<section className="relative py-20 md:py-32 overflow-hidden bg-white">
 
-{/* ================= TRAINING STRIP ================= */}
-<section className="relative py-28 overflow-hidden">
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
 
-  {/* ===== Light Background ===== */}
-  <div className="absolute inset-0 bg-gradient-to-br 
-                  from-blue-50 via-white to-red-50" />
+    <div className="text-center md:text-left">
+      <span className="inline-block mb-6 px-5 py-2 bg-gradient-to-r from-blue-600 to-red-500 text-white rounded-full text-xs sm:text-sm tracking-widest shadow">
+        VIDA ACADEMY
+      </span>
 
-  {/* Soft Glow Effects */}
-  <div className="absolute -top-20 -left-20 w-96 h-96 
-                  bg-blue-200/40 blur-3xl rounded-full"/>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+        Empowering Healthcare  
+        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-red-500">
+          Through Training
+        </span>
+      </h2>
 
-  <div className="absolute bottom-0 -right-20 w-96 h-96 
-                  bg-red-200/40 blur-3xl rounded-full"/>
+      <p className="mt-6 md:mt-8 text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+        VIDA Academy equips hospital teams with practical sterilization knowledge...
+      </p>
 
-  {/* ===== Content ===== */}
-  <div className="relative z-10 max-w-6xl mx-auto text-center px-6">
-
-    {/* Premium Badge */}
-    <div className="inline-block mb-6 px-6 py-2
-                    bg-white/70 backdrop-blur-xl
-                    border border-blue-100
-                    text-blue-700
-                    rounded-full text-sm tracking-widest shadow-sm">
-      VIDA Academy Training
+      <div className="hidden md:block mt-10 h-24 w-1 bg-gradient-to-b from-blue-600 to-red-500 rounded-full"/>
     </div>
 
-    {/* Heading */}
-   <h2 className="text-4xl md:text-5xl font-extrabold text-blue-900 
-               leading-[1.25] md:leading-[1.2] pb-3">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
 
-  Empowering Healthcare  
+      <div className="bg-white p-8 sm:p-10 rounded-3xl shadow-xl border text-center">
+        <h3 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent">300+</h3>
+        <p className="mt-3 text-gray-600">Hospitals Supported</p>
+      </div>
 
-  <span className="block text-transparent bg-clip-text 
-                   bg-gradient-to-r 
-                   from-blue-600 to-red-500
-                   leading-[1.25]">
-    Through Training
-  </span>
+      <div className="bg-gradient-to-br from-blue-700 to-red-500 text-white p-8 sm:p-10 rounded-3xl shadow-xl text-center">
+        <h3 className="text-4xl sm:text-5xl font-extrabold">14+</h3>
+        <p className="mt-3 text-blue-100">Years Experience</p>
+      </div>
 
-</h2>
-
-
-    {/* Description */}
-    <p className="mt-6 text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-      VIDA Academy equips hospital teams with practical sterilization
-      knowledge, compliance skills, and infection-control expertise —
-      building confident professionals and safer hospitals.
-    </p>
-
-    {/* ===== Glass Stats Panel ===== */}
-    <div className="mt-16 bg-white/80 backdrop-blur-xl
-                    border border-blue-100
-                    rounded-3xl p-10 shadow-xl">
-
-      <div className="grid md:grid-cols-3 gap-10">
-
-        <Stat number="300+" label="Hospitals Supported"/>
-        <Stat number="14+" label="Years Experience"/>
-        <Stat number="100%" label="Medical Focus"/>
-
+      <div className="sm:col-span-2 bg-white p-10 sm:p-12 rounded-3xl shadow-xl border text-center">
+        <h3 className="text-5xl sm:text-6xl font-extrabold bg-gradient-to-r from-red-500 to-blue-700 bg-clip-text text-transparent">100%</h3>
+        <p className="mt-4 text-gray-600">Medical Focus</p>
       </div>
 
     </div>
@@ -398,23 +263,6 @@ export default function Objectives() {
   </div>
 </section>
 
-
-
-    </main>
-  );
-}
-
-/* ================= MINI STAT ================= */
-
-function Stat({number,label}){
-  return(
-    <div>
-      <h3 className="text-4xl font-extrabold text-red-400">
-        {number}
-      </h3>
-      <p className="text-blue-100 mt-2">
-        {label}
-      </p>
-    </div>
-  );
+</main>
+);
 }

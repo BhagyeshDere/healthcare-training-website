@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Search } from "lucide-react";
+import { Search, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const navRef = useRef();
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (navRef.current && !navRef.current.contains(e.target)) {
@@ -18,7 +18,6 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // ✅ UPDATED MENU WITH REAL PATHS
   const menu = [
     {
       title: "ABOUT",
@@ -88,18 +87,16 @@ export default function Navbar() {
       {/* TOP BAR */}
       <div className="
         bg-gradient-to-r from-brandBlue to-brandRed
-        text-white text-sm
-        px-10 py-2
-        flex justify-end gap-6
-        shadow
+        text-white text-xs md:text-sm
+        px-4 md:px-10 py-2
+        flex justify-end gap-4 md:gap-6
       ">
         <a className="hover:opacity-80 transition">MEMBER SIGNUP</a>
         <a className="hover:opacity-80 transition">MEMBER LOGIN</a>
 
         <select className="
           text-black rounded-full
-          px-3 py-1 text-xs
-          border-none outline-none
+          px-2 md:px-3 py-1 text-xs
           shadow-sm
         ">
           <option>Select Language</option>
@@ -108,14 +105,14 @@ export default function Navbar() {
         </select>
       </div>
 
-      {/* MAIN NAVBAR */}
+      {/* NAVBAR */}
       <nav
         ref={navRef}
         className="
         sticky top-0 z-50
-        bg-white/80 backdrop-blur-xl
-        border-b border-gray-200
-        px-12 py-4
+        bg-white/90 backdrop-blur-xl
+        border-b
+        px-4 md:px-12 py-3 md:py-4
         flex items-center justify-between
       "
       >
@@ -124,27 +121,22 @@ export default function Navbar() {
           <img
             src="/logo.png"
             alt="VIDA Logo"
-            className="h-12 hover:scale-105 transition"
+            className="h-10 md:h-12"
           />
         </Link>
 
-        {/* MENU */}
-        <div className="flex items-center gap-10 font-medium text-gray-700">
-          
-          {/* HOME */}
-          <Link
-            to="/"
-            className="relative font-semibold hover:text-brandBlue transition"
-          >
+        {/* DESKTOP MENU */}
+        <div className="hidden lg:flex items-center gap-8 font-medium text-gray-700">
+
+          <Link to="/" className="font-semibold hover:text-brandBlue">
             HOME
           </Link>
 
-          {/* DROPDOWNS */}
           {menu.map((item, i) => (
             <div key={i} className="relative">
               <button
                 onClick={() => toggleMenu(i)}
-                className="relative hover:text-brandBlue transition"
+                className="hover:text-brandBlue"
               >
                 {item.title}
               </button>
@@ -153,8 +145,7 @@ export default function Navbar() {
                 <div className="
                   absolute top-12 left-0
                   bg-white shadow-xl rounded-xl
-                  w-60 border
-                  overflow-hidden z-50
+                  w-60 border overflow-hidden
                 ">
                   {item.links.map((link, idx) => (
                     <Link
@@ -165,8 +156,6 @@ export default function Navbar() {
                         block px-5 py-3
                         hover:bg-gradient-to-r
                         hover:from-blue-50 hover:to-red-50
-                        hover:text-brandBlue
-                        transition
                       "
                     >
                       {link.name}
@@ -177,25 +166,84 @@ export default function Navbar() {
             </div>
           ))}
 
-          {/* CONTACT */}
-          <Link
-            to="/contact"
-            className="relative hover:text-brandBlue transition"
-          >
+          <Link to="/contact" className="hover:text-brandBlue">
             CONTACT US
           </Link>
         </div>
 
-        {/* SEARCH */}
-        <button className="
-          bg-gradient-to-r from-brandBlue to-brandRed
-          text-white p-3 rounded-full
-          shadow-md hover:scale-110
-          transition
-        ">
-          <Search size={18} />
-        </button>
+        {/* RIGHT SIDE */}
+        <div className="flex items-center gap-4">
+
+          {/* SEARCH */}
+          <button className="
+            hidden md:flex
+            bg-gradient-to-r from-brandBlue to-brandRed
+            text-white p-3 rounded-full
+            shadow-md hover:scale-110 transition
+          ">
+            <Search size={18} />
+          </button>
+
+          {/* MOBILE MENU BUTTON */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden"
+          >
+            {mobileOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </nav>
+
+      {/* MOBILE MENU */}
+      {mobileOpen && (
+        <div className="lg:hidden bg-white border-b shadow-md">
+
+          <Link
+            to="/"
+            className="block px-6 py-3 border-b"
+            onClick={()=>setMobileOpen(false)}
+          >
+            HOME
+          </Link>
+
+          {menu.map((item, i) => (
+            <div key={i}>
+              <button
+                onClick={() => toggleMenu(i)}
+                className="w-full text-left px-6 py-3 border-b font-medium"
+              >
+                {item.title}
+              </button>
+
+              {open === i && (
+                <div className="bg-gray-50">
+                  {item.links.map((link, idx) => (
+                    <Link
+                      key={idx}
+                      to={link.path}
+                      onClick={()=>{
+                        setMobileOpen(false);
+                        setOpen(null);
+                      }}
+                      className="block px-10 py-3 text-sm border-b"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+
+          <Link
+            to="/contact"
+            className="block px-6 py-3"
+            onClick={()=>setMobileOpen(false)}
+          >
+            CONTACT US
+          </Link>
+        </div>
+      )}
     </>
   );
 }

@@ -62,28 +62,28 @@ export default function VidaResourcesSection() {
   ];
 
   return (
-    <section className="py-28 relative overflow-hidden bg-gradient-to-b from-white via-blue-50/40 to-white">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-28 relative overflow-hidden bg-gradient-to-b from-white via-blue-50/40 to-white">
 
       {/* ===== PREMIUM BACKGROUND GLOW ===== */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-blue-200/30 blur-[180px] rounded-full" />
-        <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-red-200/30 blur-[180px] rounded-full" />
+        <div className="absolute top-0 left-1/4 w-[320px] sm:w-[500px] lg:w-[700px] h-[320px] sm:h-[500px] lg:h-[700px] bg-blue-200/30 blur-[120px] sm:blur-[150px] lg:blur-[180px] rounded-full" />
+        <div className="absolute bottom-0 right-1/4 w-[320px] sm:w-[500px] lg:w-[700px] h-[320px] sm:h-[500px] lg:h-[700px] bg-red-200/30 blur-[120px] sm:blur-[150px] lg:blur-[180px] rounded-full" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* ===== HEADER ===== */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
 
-          <span className="text-red-500 uppercase tracking-[6px] text-sm font-semibold">
+          <span className="text-red-500 uppercase tracking-[4px] sm:tracking-[6px] text-xs sm:text-sm font-semibold">
             VIDA Resources
           </span>
 
-          <h2 className="text-5xl md:text-6xl font-extrabold mt-4 bg-gradient-to-r from-blue-800 to-red-500 text-transparent bg-clip-text">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mt-3 sm:mt-4 bg-gradient-to-r from-blue-800 to-red-500 text-transparent bg-clip-text">
             Explore Resources
           </h2>
 
-          <p className="text-gray-600 mt-6 max-w-xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-600 mt-4 sm:mt-6 max-w-xl mx-auto text-base sm:text-lg leading-relaxed px-2">
             Intelligent tools, frameworks and knowledge systems
             designed to elevate healthcare excellence.
           </p>
@@ -93,7 +93,9 @@ export default function VidaResourcesSection() {
         <div
           ref={scrollRef}
           className="
-            flex gap-16 overflow-x-hidden whitespace-nowrap py-14
+            flex gap-8 sm:gap-12 md:gap-16
+            overflow-x-hidden whitespace-nowrap
+            py-10 sm:py-12 md:py-14
             [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
           "
         >
@@ -105,32 +107,36 @@ export default function VidaResourcesSection() {
 
               {/* FLOATING GLOW ORB */}
               <div className="
-                absolute w-44 h-44 rounded-full
+                absolute w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44
+                rounded-full
                 bg-gradient-to-br from-blue-500/30 to-red-400/30
-                blur-3xl opacity-0 group-hover:opacity-100
+                blur-2xl sm:blur-3xl
+                opacity-0 group-hover:opacity-100
                 transition duration-500
               " />
 
               {/* ICON CONTAINER */}
               <div
                 className="
-                  relative w-32 h-32 rounded-[28px]
+                  relative
+                  w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32
+                  rounded-[20px] sm:rounded-[24px] md:rounded-[28px]
                   bg-white/60 backdrop-blur-2xl
                   border border-white/40
                   flex items-center justify-center
-                  shadow-[0_15px_40px_rgba(0,0,0,0.08)]
-                  
+                  shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+
                   transform transition duration-500
-                  group-hover:-translate-y-4
+                  group-hover:-translate-y-3 sm:group-hover:-translate-y-4
                   group-hover:rotate-1
-                  group-hover:scale-110
+                  group-hover:scale-105 sm:group-hover:scale-110
                   group-hover:shadow-[0_25px_60px_rgba(30,58,138,0.25)]
                 "
               >
 
                 {/* INNER GRADIENT RING */}
                 <div className="
-                  absolute inset-0 rounded-[28px]
+                  absolute inset-0 rounded-[20px] sm:rounded-[24px] md:rounded-[28px]
                   bg-gradient-to-br from-blue-600/10 to-red-500/10
                   opacity-0 group-hover:opacity-100 transition
                 " />
@@ -141,6 +147,7 @@ export default function VidaResourcesSection() {
                   text-blue-800
                   group-hover:text-red-500
                   transition duration-300
+                  scale-75 sm:scale-90 md:scale-100
                 ">
                   {item.icon}
                 </div>
@@ -148,10 +155,12 @@ export default function VidaResourcesSection() {
 
               {/* LABEL */}
               <p className="
-                mt-6 font-semibold text-gray-700
-                tracking-wide text-base
+                mt-4 sm:mt-5 md:mt-6
+                font-semibold text-gray-700
+                tracking-wide
+                text-sm sm:text-base
                 group-hover:text-blue-800
-                transition
+                transition text-center
               ">
                 {item.label}
               </p>

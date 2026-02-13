@@ -50,32 +50,41 @@ export default function JourneySection() {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-16 sm:py-24 md:py-32 overflow-hidden">
 
-      {/* ===== SLIGHTLY DARK BACKGROUND ===== */}
+      {/* ===== BACKGROUND ===== */}
       <div className="absolute inset-0 
         bg-gradient-to-b 
         from-blue-100 
         via-slate-100 
         to-blue-200"/>
 
-      {/* Soft brand glows */}
+      {/* Soft glows */}
       <div className="absolute -top-24 -left-24 
-        w-96 h-96 bg-blue-300/30 blur-3xl rounded-full"/>
+        w-72 sm:w-96 h-72 sm:h-96 
+        bg-blue-300/30 blur-3xl rounded-full"/>
 
       <div className="absolute bottom-0 right-0 
-        w-96 h-96 bg-red-300/30 blur-3xl rounded-full"/>
+        w-72 sm:w-96 h-72 sm:h-96 
+        bg-red-300/30 blur-3xl rounded-full"/>
 
       {/* Heading */}
-      <h2 className="relative z-10 text-center text-5xl font-extrabold text-blue-900 mb-24">
+      <h2 className="relative z-10 text-center 
+        text-3xl sm:text-4xl md:text-5xl 
+        font-extrabold text-blue-900 
+        mb-16 sm:mb-24">
         Our Journey
       </h2>
 
       {/* Timeline Container */}
-      <div className="relative max-w-6xl mx-auto px-6 space-y-24">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 space-y-16 sm:space-y-24">
 
-        {/* Center Gradient Line */}
-        <div className="absolute left-1/2 top-0 w-[3px] h-full 
+        {/* Center Line (desktop) */}
+        <div className="hidden md:block absolute left-1/2 top-0 w-[3px] h-full 
+                        bg-gradient-to-b from-blue-600 via-blue-400 to-red-500"/>
+
+        {/* Left Line (mobile) */}
+        <div className="md:hidden absolute left-4 top-0 w-[3px] h-full 
                         bg-gradient-to-b from-blue-600 via-blue-400 to-red-500"/>
 
         {data.map((item,i)=>(
@@ -83,19 +92,28 @@ export default function JourneySection() {
 
             {/* BIG YEAR WATERMARK */}
             <span className={`
-              absolute text-[150px] font-extrabold 
+              absolute 
+              text-[60px] sm:text-[100px] md:text-[150px]
+              font-extrabold 
               bg-gradient-to-r from-blue-300 to-red-300 
-              bg-clip-text text-transparent select-none
-              ${i%2===0 ? "-left-10" : "-right-10"}
+              bg-clip-text text-transparent 
+              select-none opacity-30
+              ${i%2===0 ? "md:-left-10" : "md:-right-10"}
+              -top-6 md:top-0
             `}>
               {item.year}
             </span>
 
             {/* Timeline Dot */}
-            <div className="absolute left-1/2 -translate-x-1/2 w-6 h-6 
-                            bg-white border-4 
-                            border-blue-500 rounded-full z-10
-                            shadow-md"/>
+            <div className="
+              absolute 
+              left-4 md:left-1/2 
+              md:-translate-x-1/2
+              w-5 h-5 sm:w-6 sm:h-6
+              bg-white border-4 
+              border-blue-500 rounded-full 
+              z-10 shadow-md
+            "/>
 
             {/* Content Card */}
             <motion.div
@@ -105,26 +123,36 @@ export default function JourneySection() {
               viewport={{once:true}}
               whileHover={{scale:1.03}}
               className={`
-                w-[46%] p-6 rounded-xl
+                ml-12 md:ml-0
+                w-auto md:w-[46%]
+                p-5 sm:p-6 
+                rounded-xl
                 bg-white/95 backdrop-blur
                 shadow-lg border border-gray-200
-                ${i%2===0 ? "ml-auto text-left" : "mr-auto text-right"}
+                ${i%2===0 
+                  ? "md:ml-auto md:text-left" 
+                  : "md:mr-auto md:text-right"}
               `}
             >
 
-              <p className="text-red-500 font-semibold tracking-widest uppercase text-sm">
+              <p className="text-red-500 font-semibold 
+                tracking-widest uppercase 
+                text-xs sm:text-sm">
                 {item.title}
               </p>
 
-              <p className="text-gray-700 mt-3 leading-relaxed">
+              <p className="text-gray-700 
+                mt-3 leading-relaxed
+                text-sm sm:text-base">
                 {item.text}
               </p>
 
               {/* Accent Line */}
-              <div className={`mt-4 h-[3px] w-20 
+              <div className={`
+                mt-4 h-[3px] w-16 sm:w-20 
                 bg-gradient-to-r from-blue-600 to-red-500
                 rounded-full
-                ${i%2===0 ? "" : "ml-auto"}
+                ${i%2===0 ? "" : "md:ml-auto"}
               `}/>
 
             </motion.div>

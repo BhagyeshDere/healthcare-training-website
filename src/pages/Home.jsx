@@ -9,7 +9,7 @@ import EventsSection from "../components/EventsSection";
 import LibrarySection from "../components/LibrarySection";
 import VidaAwardsSection from "../components/VidaAwardsSection";
 import VidaResourcesSection from "../components/VidaResourcesSection";
-import VidaConnectSection from "../components/VidaConnectSection"; // ✅ NEW SECTION
+import VidaConnectSection from "../components/VidaConnectSection";
 
 /* PREMIUM ANIMATION VARIANTS */
 const sectionVariant = {
@@ -33,26 +33,33 @@ const sectionVariant = {
 
 /* Reusable wrapper */
 const MotionSection = ({ children }) => (
-  <motion.div
+  <motion.section
     variants={sectionVariant}
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true, amount: 0.2 }}
+    viewport={{ once: true, amount: 0.15 }}
+    className="w-full overflow-hidden"
   >
     {children}
-  </motion.div>
+  </motion.section>
 );
 
 export default function Home() {
   return (
     <motion.main
-      className="overflow-x-hidden"
+      className="
+        overflow-x-hidden
+        w-full
+        max-w-[100vw]
+      "
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
       {/* HERO */}
-      <HeroSlider />
+      <div className="w-full overflow-hidden">
+        <HeroSlider />
+      </div>
 
       <MotionSection>
         <AboutStats />
@@ -86,12 +93,11 @@ export default function Home() {
         <VidaResourcesSection />
       </MotionSection>
 
-      {/* ✅ VIDA CONNECT / COLLAB SECTION */}
+      {/* VIDA CONNECT / COLLAB SECTION */}
       <MotionSection>
         <VidaConnectSection />
       </MotionSection>
 
-     
     </motion.main>
   );
 }

@@ -48,10 +48,7 @@ export default function VidaAcademy() {
       },
     });
 
-    // ✅ FIXED BACKGROUND SLIDER (no white flash)
     const slides = gsap.utils.toArray(".bg-slide");
-
-    // Show first slide immediately
     gsap.set(slides[0], { opacity: 1 });
 
     const tl = gsap.timeline({ repeat: -1 });
@@ -61,7 +58,7 @@ export default function VidaAcademy() {
 
       tl.to(slides, { opacity: 0, duration: 1.5 })
         .to(slide, { opacity: 1, duration: 1.5 })
-        .to({}, { duration: 3 }); // hold time
+        .to({}, { duration: 3 });
     });
 
   }, []);
@@ -111,7 +108,7 @@ export default function VidaAcademy() {
   `;
 
   return (
-    <section className="relative py-28 overflow-hidden text-white bg-[#021a40]">
+    <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden text-white bg-[#021a40]">
 
       {/* ===== BACKGROUND SLIDER ===== */}
       <div className="absolute inset-0 z-0">
@@ -137,20 +134,20 @@ export default function VidaAcademy() {
       </div>
 
       {/* ===== CONTENT ===== */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
 
-        <div className="academy-header text-center mb-20 opacity-0 -translate-y-10">
-          <h2 className="text-5xl font-extrabold text-cyan-300">
+        <div className="academy-header text-center mb-12 sm:mb-16 md:mb-20 opacity-0 -translate-y-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-cyan-300">
             VIDA Academy
           </h2>
 
-          <p className="text-gray-200 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-200 mt-3 sm:mt-4 max-w-2xl mx-auto text-sm sm:text-base">
             Empowering healthcare delivery through Online & Offline training,
             research, and global collaboration.
           </p>
         </div>
 
-        <div className="program-grid grid md:grid-cols-3 gap-16">
+        <div className="program-grid grid sm:grid-cols-2 md:grid-cols-3 gap-10 sm:gap-12 md:gap-16">
 
           {items.map((item, i) => {
             const Icon = item.icon;
@@ -158,10 +155,10 @@ export default function VidaAcademy() {
             return (
               <div
                 key={i}
-                className="d-card opacity-0 translate-y-10 text-center p-6 cursor-pointer transition hover:-translate-y-3"
+                className="d-card opacity-0 translate-y-10 text-center p-4 sm:p-5 md:p-6 cursor-pointer transition hover:-translate-y-3"
               >
 
-                <div className="relative w-20 h-20 mx-auto mb-6">
+                <div className="relative w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 mx-auto mb-4 sm:mb-5 md:mb-6">
 
                   <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-full" />
 
@@ -183,25 +180,25 @@ export default function VidaAcademy() {
                   </svg>
 
                   <div className="absolute inset-0 flex items-center justify-center text-cyan-300">
-                    <Icon size={34} strokeWidth={2.2} />
+                    <Icon size={28} className="sm:size-[30px] md:size-[34px]" strokeWidth={2.2} />
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-cyan-300">
+                <h3 className="text-xl sm:text-2xl font-bold text-cyan-300">
                   {item.title}
                 </h3>
 
-                <p className="text-gray-200 mt-3">
+                <p className="text-gray-200 mt-2 sm:mt-3 text-sm sm:text-base">
                   {item.desc}
                 </p>
 
-                <ul className="text-gray-300 mt-4 space-y-1">
+                <ul className="text-gray-300 mt-3 sm:mt-4 space-y-1 text-sm sm:text-base">
                   {item.points.map((p, idx) => (
                     <li key={idx}>• {p}</li>
                   ))}
                 </ul>
 
-                <button className="mt-6 px-6 py-2 border-2 border-red-400 text-red-400 rounded-full hover:bg-red-500 hover:text-white transition">
+                <button className="mt-4 sm:mt-5 md:mt-6 px-5 sm:px-6 py-2 border-2 border-red-400 text-red-400 rounded-full hover:bg-red-500 hover:text-white transition text-sm sm:text-base">
                   Read More
                 </button>
 

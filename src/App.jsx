@@ -11,17 +11,18 @@ import Leadership from "./pages/About/Leadership";
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-
-        <Route element={<MainLayout />}>
-          <Route index element={<Home />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="who-we-are" element={<WhoWeAre />} />
-          <Route path="objectives" element={<Objectives />} />
-          <Route path="leadership" element={<Leadership />} />
-        </Route>
-
-      </Routes>
+      {/* Ensures full-width responsive rendering */}
+      <div className="w-full min-h-screen overflow-x-hidden">
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="who-we-are" element={<WhoWeAre />} />
+            <Route path="objectives" element={<Objectives />} />
+            <Route path="leadership" element={<Leadership />} />
+          </Route>
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
