@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
 
-import HeroSlider from "../components/HeroSlider";
-import AboutStats from "../components/AboutStats";
-import IntroVideo from "../components/IntroVideo";
-import ProgramsMembership from "../components/ProgramsMembership";
-import VidaAcademy from "../components/VidaAcademy";
-import EventsSection from "../components/EventsSection";
-import LibrarySection from "../components/LibrarySection";
-import VidaAwardsSection from "../components/VidaAwardsSection";
-import VidaResourcesSection from "../components/VidaResourcesSection";
-import VidaConnectSection from "../components/VidaConnectSection";
+import HeroSlider from "../components/home/HeroSlider";
+import AboutStats from "../components/home/AboutStats";
+import IntroVideo from "../components/home/IntroVideo";
+import ProgramsMembership from "../components/home/ProgramsMembership";
+import VidaAcademy from "../components/home/VidaAcademy";
+import EventsSection from "../components/home/EventsSection";
+import LibrarySection from "../components/home/LibrarySection";
+import VidaAwardsSection from "../components/home/VidaAwardsSection";
+import VidaResourcesSection from "../components/home/VidaResourcesSection";
+import VidaConnectSection from "../components/home/VidaConnectSection";
+
 
 /* PREMIUM ANIMATION VARIANTS */
 const sectionVariant = {
