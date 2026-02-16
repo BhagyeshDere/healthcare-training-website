@@ -117,28 +117,30 @@ const [search, setSearch] = useState("");
     <div className="bg-slate-950 text-white">
 
       {/* ================= HERO ================= */}
-      <section className="relative h-[75vh] md:h-[85vh] flex items-center justify-center text-center overflow-hidden">
+<section className="relative h-[75vh] md:h-[85vh] flex items-center justify-center text-center overflow-hidden">
 
-        <img
-          src="/images/events/partnerhero.jpg"
-          className="absolute inset-0 w-full h-full object-cover"
-          alt=""
-        />
+  <img
+    src="/images/academy/training1.jpg"
+    className="absolute inset-0 w-full h-full object-cover"
+    alt=""
+  />
 
-        <div className="absolute inset-0 bg-black/40"/>
+  {/* Improved dark overlay */}
+  <div className="absolute inset-0 bg-black/50"/>
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50"/>
 
-        <div className="relative z-10 max-w-3xl px-6">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg">
-            VIDA Training Programs
-          </h1>
+  <div className="relative z-10 max-w-3xl px-6">
+    <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
+      VIDA Training Programs
+    </h1>
 
-          <p className="mt-6 text-blue-100 drop-shadow-md">
-            Empowering healthcare professionals with world-class
-            sterilization, quality and patient safety training.
-          </p>
-        </div>
+    <p className="mt-6 text-blue-100 drop-shadow-[0_3px_12px_rgba(0,0,0,0.8)]">
+      Empowering healthcare professionals with world-class
+      sterilization, quality and patient safety training.
+    </p>
+  </div>
 
-      </section>
+</section>
 
 
       {/* ================= FILTER BAR ================= */}
@@ -184,80 +186,83 @@ const [search, setSearch] = useState("");
         </div>
       </section>
 
+{/* ================= CARDS ================= */}
+<section className="py-16 px-6 bg-gradient-to-br from-gray-50 via-white to-gray-100">
 
-      {/* ================= CARDS ================= */}
-      <section className="py-16 px-6">
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+    {filtered.map((p,i)=>(
+      <motion.div
+        key={i}
+        initial={{opacity:0,y:30}}
+        whileInView={{opacity:1,y:0}}
+        whileHover={{y:-10}}
+        className="
+          group relative overflow-hidden
+          rounded-3xl
+          bg-slate-900
+          text-white
+          border border-slate-700
+          shadow-xl
+          hover:shadow-2xl
+          transition
+        "
+      >
 
-          {filtered.map((p,i)=>(
-            <motion.div
-              key={i}
-              initial={{opacity:0,y:30}}
-              whileInView={{opacity:1,y:0}}
-              whileHover={{y:-10}}
-              className="
-                group relative overflow-hidden
-                rounded-3xl
-                bg-white/10 backdrop-blur-xl
-                border border-white/20
-              "
-            >
+        {/* Image */}
+        <div className="h-60 overflow-hidden">
+          <img
+            src={p.image}
+            className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+            alt=""
+          />
+        </div>
 
-              {/* Image */}
-              <div className="h-60 overflow-hidden">
-                <img
-                  src={p.image}
-                  className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-                  alt=""
-                />
-              </div>
+        {/* Content */}
+        <div className="p-6">
 
-              {/* Content */}
-              <div className="p-6">
+          <h3 className="text-xl font-bold text-white">
+            {p.title}
+          </h3>
 
-                <h3 className="text-xl font-bold">
-                  {p.title}
-                </h3>
+          <div className="flex items-center gap-4 mt-4 text-gray-300 text-sm">
 
-                <div className="flex items-center gap-4 mt-4 text-gray-300 text-sm">
+            <span className="flex items-center gap-2">
+              {p.type==="Online" && <Laptop size={16}/>}
+              {p.type==="Onsite" && <MapPin size={16}/>}
+              {p.type==="Self" && <BookOpen size={16}/>}
+              {p.type==="Self" ? "Self Paced" : p.type}
+            </span>
 
-                  <span className="flex items-center gap-2">
-                    {p.type==="Online" && <Laptop size={16}/>}
-                    {p.type==="Onsite" && <MapPin size={16}/>}
-                    {p.type==="Self" && <BookOpen size={16}/>}
-                    {p.type==="Self" ? "Self Paced" : p.type}
-                  </span>
+            <span className="flex items-center gap-2">
+              <MapPin size={16}/> {p.location}
+            </span>
 
-                  <span className="flex items-center gap-2">
-                    <MapPin size={16}/> {p.location}
-                  </span>
+          </div>
 
-                </div>
-
-                {/* EXPLORE BUTTON */}
-                <a
-                  href={p.pdf}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    mt-6 inline-flex items-center gap-2
-                    bg-gradient-to-r from-blue-600 to-red-500
-                    px-6 py-3 rounded-full font-semibold
-                    hover:scale-105 transition
-                  "
-                >
-                  Explore <ArrowRight size={18}/>
-                </a>
-
-              </div>
-
-            </motion.div>
-          ))}
+          {/* EXPLORE BUTTON */}
+          <a
+            href={p.pdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              mt-6 inline-flex items-center gap-2
+              bg-gradient-to-r from-blue-600 to-red-500
+              px-6 py-3 rounded-full font-semibold
+              hover:scale-105 transition
+            "
+          >
+            Explore <ArrowRight size={18}/>
+          </a>
 
         </div>
 
-      </section>
+      </motion.div>
+    ))}
+
+  </div>
+
+</section>
 
     </div>
   );

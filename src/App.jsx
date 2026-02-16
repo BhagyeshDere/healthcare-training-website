@@ -16,8 +16,10 @@ import AnnualEvents from "./pages/Events/AnnualEvents";
 import PartnerEvents from "./pages/Events/PartnerEvents";
 import InternationalEvents from "./pages/Events/InternationalEvents";
 
-/* ✅ ACADEMY PAGE */
-import TrainingPrograms from "./pages/Academy/TrainingPrograms"; // NEW
+/* ✅ ACADEMY PAGES */
+import TrainingPrograms from "./pages/Academy/TrainingPrograms";
+import ExcellencePrograms from "./pages/Academy/ExcellencePrograms";
+import MasterclassSeries from "./pages/Academy/MasterclassSeries"; // ✅ ADDED
 
 export default function App() {
   return (
@@ -46,6 +48,8 @@ export default function App() {
 
             {/* ✅ ACADEMY */}
             <Route path="academy/training" element={<TrainingPrograms />} />
+            <Route path="academy/excellence" element={<ExcellencePrograms />} />
+            <Route path="academy/masterclass" element={<MasterclassSeries />} /> {/* ✅ NEW */}
 
           </Route>
         </Routes>
