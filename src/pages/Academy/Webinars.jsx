@@ -48,30 +48,125 @@ export default function Webinars() {
 
   return (
     <div className="bg-slate-950 text-white min-h-screen">
+{/* ================= HERO ================= */}
+<section className="relative min-h-[85vh] md:min-h-[95vh] lg:min-h-[100vh] flex items-center justify-center text-center overflow-hidden">
 
-      {/* ================= HERO ================= */}
-      <section className="relative h-[70vh] flex items-center justify-center text-center overflow-hidden">
+  <img
+    src="/images/academy/webinarshero.jpg"
+    className="absolute inset-0 w-full h-full object-cover"
+    alt=""
+  />
 
-        <img
-          src="/images/events/partnerhero.jpg"
-          className="absolute inset-0 w-full h-full object-cover"
-          alt=""
-        />
+  <div className="absolute inset-0 bg-black/60"/>
 
-        <div className="absolute inset-0 bg-black/60"/>
+  <div className="relative z-10 px-6 max-w-4xl">
+    <h1 className="text-5xl md:text-7xl font-extrabold">
+      VIDA Webinars
+    </h1>
 
-        <div className="relative z-10 px-6 max-w-4xl">
-          <h1 className="text-5xl md:text-7xl font-extrabold">
-            VIDA Webinars
-          </h1>
+    <p className="mt-6 text-gray-200 text-lg">
+      Learn from global healthcare experts through
+      interactive VIDA Life Sciences webinars.
+    </p>
+  </div>
 
-          <p className="mt-6 text-gray-200 text-lg">
-            Learn from global healthcare experts through
-            interactive VIDA Life Sciences webinars.
-          </p>
-        </div>
+</section>
 
-      </section>
+{/* ================= VIDA INTRO ================= */}
+<section className="relative overflow-hidden py-20 px-6">
+
+  {/* LIGHT BACKGROUND */}
+  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-red-50"/>
+
+  {/* soft glow accents */}
+  <div className="absolute -top-20 -left-20 w-96 h-96 bg-blue-200/30 blur-3xl rounded-full"/>
+  <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-red-200/30 blur-3xl rounded-full"/>
+
+  <div className="relative max-w-6xl mx-auto">
+
+    {/* DARK CARD */}
+    <div className="
+      bg-slate-900
+      text-white
+      rounded-3xl
+      p-10 md:p-16
+      shadow-[0_25px_80px_rgba(0,0,0,0.25)]
+      text-center
+    ">
+
+      {/* Title */}
+      <h2 className="
+        text-3xl md:text-5xl
+        font-extrabold
+        bg-gradient-to-r from-blue-400 to-red-400
+        bg-clip-text text-transparent
+      ">
+        VIDA Life Sciences Webinars
+      </h2>
+
+      {/* Paragraph */}
+      <p className="
+        mt-8
+        text-gray-300
+        text-lg
+        leading-relaxed
+        max-w-4xl
+        mx-auto
+      ">
+        VIDA Life Sciences webinars provide a powerful platform for
+        continuous professional education in healthcare. Our expert-led
+        virtual sessions connect global practitioners to discuss emerging
+        trends, regulatory updates, infection control practices, and
+        quality improvement strategies.
+      </p>
+
+      <p className="
+        mt-6
+        text-gray-400
+        leading-relaxed
+        max-w-4xl
+        mx-auto
+      ">
+        With an emphasis on real-world case learning and interactive
+        dialogue, VIDA webinars strengthen clinical knowledge,
+        encourage collaboration, and support measurable
+        improvements in patient safety and healthcare excellence.
+      </p>
+
+      {/* BADGES */}
+      <div className="
+        flex flex-wrap
+        justify-center
+        gap-4
+        mt-10
+      ">
+        {[
+          "Expert Speakers",
+          "Global Participation",
+          "Case-Based Learning",
+          "Certified Sessions"
+        ].map((item,i)=>(
+          <span
+            key={i}
+            className="
+              px-6 py-2
+              rounded-full
+              bg-white/10
+              border border-white/20
+              text-sm text-gray-200
+            "
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 
       {/* ================= FILTER BAR ================= */}
       <section className="py-12 px-6 bg-slate-900">

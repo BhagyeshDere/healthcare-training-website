@@ -43,7 +43,7 @@ export default function InternationalEvents() {
 {/* ================= HERO ================= */}
 <section className="relative min-h-[95vh] md:min-h-[105vh] flex items-center justify-center text-center">
 
-  <img src="/images/academy/internationalhero.jpg"
+  <img src="/images/events/internationalhero.jpg"
        className="absolute inset-0 w-full h-full object-cover"/>
 
   <div className="absolute inset-0 bg-black/55"/>

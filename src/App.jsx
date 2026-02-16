@@ -19,7 +19,9 @@ import InternationalEvents from "./pages/Events/InternationalEvents";
 /* ✅ ACADEMY PAGES */
 import TrainingPrograms from "./pages/Academy/TrainingPrograms";
 import ExcellencePrograms from "./pages/Academy/ExcellencePrograms";
-import MasterclassSeries from "./pages/Academy/MasterclassSeries"; // ✅ ADDED
+import MasterclassSeries from "./pages/Academy/MasterclassSeries";
+import Webinars from "./pages/Academy/Webinars";
+import InternationalPrograms from "./pages/Academy/InternationalPrograms"; // ✅ ADDED
 
 export default function App() {
   return (
@@ -49,7 +51,9 @@ export default function App() {
             {/* ✅ ACADEMY */}
             <Route path="academy/training" element={<TrainingPrograms />} />
             <Route path="academy/excellence" element={<ExcellencePrograms />} />
-            <Route path="academy/masterclass" element={<MasterclassSeries />} /> {/* ✅ NEW */}
+            <Route path="academy/masterclass" element={<MasterclassSeries />} />
+            <Route path="academy/webinars" element={<Webinars />} />
+            <Route path="academy/international" element={<InternationalPrograms />} /> {/* ✅ NEW */}
 
           </Route>
         </Routes>
