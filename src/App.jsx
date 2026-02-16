@@ -14,7 +14,10 @@ import OurJourney from "./pages/About/OurJourney";
 /* EVENTS PAGES */
 import AnnualEvents from "./pages/Events/AnnualEvents";
 import PartnerEvents from "./pages/Events/PartnerEvents";
-import InternationalEvents from "./pages/Events/InternationalEvents"; // ✅ ADDED
+import InternationalEvents from "./pages/Events/InternationalEvents";
+
+/* ✅ ACADEMY PAGE */
+import TrainingPrograms from "./pages/Academy/TrainingPrograms"; // NEW
 
 export default function App() {
   return (
@@ -39,7 +42,10 @@ export default function App() {
             {/* EVENTS */}
             <Route path="events/annual" element={<AnnualEvents />} />
             <Route path="events/partner" element={<PartnerEvents />} />
-            <Route path="events/international" element={<InternationalEvents />} /> {/* ✅ NEW */}
+            <Route path="events/international" element={<InternationalEvents />} />
+
+            {/* ✅ ACADEMY */}
+            <Route path="academy/training" element={<TrainingPrograms />} />
 
           </Route>
         </Routes>

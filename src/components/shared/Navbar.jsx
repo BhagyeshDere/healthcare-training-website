@@ -55,15 +55,17 @@ export default function Navbar() {
         { name: "Academic Institution", path: "/membership/academic" },
       ],
     },
-    {
-      title: "ACADEMY",
-      links: [
-        { name: "Training Programs", path: "/academy/training" },
-        { name: "Excellence Programs", path: "/academy/excellence" },
-        { name: "Masterclass Series", path: "/academy/masterclass" },
-        { name: "Webinars", path: "/academy/webinars" },
-      ],
-    },
+   {
+  title: "ACADEMY",
+  links: [
+    { name: "Training Programs", path: "/academy/training" },
+    { name: "Excellence Programs", path: "/academy/excellence" },
+    { name: "Masterclass Series", path: "/academy/masterclass" },
+    { name: "Webinars", path: "/academy/webinars" },
+    { name: "International Programs", path: "/academy/international" }, // ✅ NEW
+  ],
+},
+
     {
       title: "LIBRARY",
       links: [

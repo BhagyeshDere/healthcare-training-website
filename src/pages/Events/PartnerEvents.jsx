@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { CalendarDays, MapPin, ArrowRight } from "lucide-react";
 
@@ -8,6 +9,7 @@ const partners = [
     location: "Dubai, UAE",
     image: "/images/events/part1.jpg",
     desc: "International collaboration on sterilization excellence, infection control, and hospital safety systems.",
+    category: "upcoming"
   },
   {
     title: "VIDA x MedTech Leaders Meet",
@@ -15,21 +17,32 @@ const partners = [
     location: "Singapore",
     image: "/images/events/part2.jpg",
     desc: "Partner event focused on medical device innovation and compliance-driven hospital ecosystems.",
+    category: "upcoming"
   },
   {
     title: "VIDA x Healthcare Summit",
-    date: "Nov 2–3, 2026",
+    date: "Nov 2–3, 2025",
     location: "London, UK",
     image: "/images/events/part3.jpg",
     desc: "Global healthcare leaders unite to discuss patient safety and sterilization quality frameworks.",
+    category: "past"
   },
 ];
 
 export default function PartnerEvents() {
+
+  /* ===== TAB STATE (NEW) ===== */
+  const [tab, setTab] = useState("upcoming");
+
+  const filteredPartners =
+    tab === "all"
+      ? partners
+      : partners.filter(p => p.category === tab);
+
   return (
     <div className="bg-slate-950 text-white">
 
-      {/* ================= HERO ================= */}
+{/* ================= HERO ================= */}
 <section className="relative min-h-[95vh] md:min-h-[110vh] flex items-center justify-center text-center overflow-hidden">
 
   <img
@@ -38,7 +51,6 @@ export default function PartnerEvents() {
     alt=""
   />
 
-  {/* Softer dark overlays */}
   <div className="absolute inset-0 bg-black/35" />
   <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40" />
 
@@ -64,10 +76,10 @@ export default function PartnerEvents() {
 
   </motion.div>
 </section>
+
 {/* ================= INTRO + PARTNER EVENTS ================= */}
 <section className="relative py-24 overflow-hidden bg-gradient-to-br from-blue-950 via-slate-900 to-blue-950">
 
-  {/* Background glows */}
   <div className="absolute -top-20 -left-20 w-96 h-96 bg-blue-600/20 blur-3xl rounded-full"/>
   <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-red-600/20 blur-3xl rounded-full"/>
 
@@ -88,10 +100,39 @@ export default function PartnerEvents() {
     </p>
   </div>
 
+  {/* ===== TAB BUTTONS (NEW) ===== */}
+  <div className="relative z-10 max-w-7xl mx-auto px-6 mt-12 flex gap-4">
+
+    <button
+      onClick={() => setTab("upcoming")}
+      className={`
+        px-8 py-3 rounded-md font-semibold transition
+        ${tab==="upcoming"
+          ? "bg-gradient-to-r from-blue-600 to-red-500 text-white shadow-lg"
+          : "bg-white/10 text-gray-300 hover:bg-white/20"}
+      `}
+    >
+      Upcoming
+    </button>
+
+    <button
+      onClick={() => setTab("past")}
+      className={`
+        px-8 py-3 rounded-md font-semibold transition
+        ${tab==="past"
+          ? "bg-gradient-to-r from-blue-600 to-red-500 text-white shadow-lg"
+          : "bg-white/10 text-gray-300 hover:bg-white/20"}
+      `}
+    >
+      Past
+    </button>
+
+  </div>
+
   {/* ===== HORIZONTAL CARDS ===== */}
   <div className="relative z-10 max-w-7xl mx-auto mt-20 space-y-16 px-6">
 
-    {partners.map((e,i)=>(
+    {filteredPartners.map((e,i)=>(
       <motion.div
         key={i}
         initial={{opacity:0, y:40}}
@@ -125,8 +166,6 @@ export default function PartnerEvents() {
                 transition duration-700
               "
             />
-
-            {/* image overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent"/>
           </div>
 
@@ -172,6 +211,8 @@ export default function PartnerEvents() {
   </div>
 
 </section>
+
+   
 
 {/* ================= CTA ================= */}
 <section className="relative py-24 text-center overflow-hidden bg-gradient-to-b from-white via-blue-50 to-red-50">
