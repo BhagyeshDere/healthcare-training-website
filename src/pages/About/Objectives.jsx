@@ -217,6 +217,7 @@ export default function Objectives() {
 </section>
 
 
+
 {/* ================= TRAINING ================= */}
 <section className="relative py-20 md:py-32 overflow-hidden bg-white">
 
