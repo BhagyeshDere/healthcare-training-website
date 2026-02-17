@@ -9,28 +9,28 @@ const programs = [
     title: "Infection Control & Sterilization",
     type: "Onsite",
     location: "VIDA Training Center",
-    image: "/images/events/annual1.jpg",
+    image: "/images/academy/training11.jpg",
     pdf: "/pdfs/sample.pdf"
   },
   {
     title: "Hospital Quality Management",
     type: "Online",
     location: "Virtual",
-    image: "/images/events/international1.jpg",
+    image: "/images/academy/training2.jpg",
     pdf: "/pdfs/sample.pdf"
   },
   {
     title: "Patient Safety Certification",
     type: "Self",
     location: "Self Paced",
-    image: "/images/events/annual2.jpg",
+    image: "/images/academy/training3.jpg",
     pdf: "/pdfs/sample.pdf"
   },
   {
     title: "Advanced Sterilization Program",
     type: "Onsite",
     location: "VIDA Lab",
-    image: "/images/events/part1.jpg",
+    image: "/images/academy/training4.jpg",
     pdf: "/pdfs/sample.pdf"
   },
 
@@ -40,56 +40,56 @@ const programs = [
     title: "Clinical Audit & Compliance",
     type: "Online",
     location: "Virtual",
-    image: "/images/events/part2.jpg",
+    image: "/images/academy/training5.jpg",
     pdf: "/pdfs/sample.pdf"
   },
   {
     title: "Biomedical Equipment Safety",
     type: "Onsite",
     location: "VIDA Biomedical Lab",
-    image: "/images/events/part3.jpg",
+    image: "/images/academy/training6.jpg",
     pdf: "/pdfs/sample.pdf"
   },
   {
     title: "Infection Prevention Workshop",
     type: "Onsite",
     location: "VIDA Center Mumbai",
-    image: "/images/events/annualevent.jpg",
+    image: "/images/academy/training7.jpg",
     pdf: "/pdfs/sample.pdf"
   },
   {
     title: "Healthcare Risk Management",
     type: "Online",
     location: "Virtual",
-    image: "/images/events/international2.jpg",
+    image: "/images/academy/training8.jpg",
     pdf: "/pdfs/sample.pdf"
   },
   {
     title: "Nursing Quality Excellence",
     type: "Self",
     location: "Self Paced",
-    image: "/images/events/international3.jpg",
+    image: "/images/academy/training9.jpg",
     pdf: "/pdfs/sample.pdf"
   },
   {
     title: "CSSD Best Practices Program",
     type: "Onsite",
     location: "VIDA Training Hub",
-    image: "/images/events/partnerhero.jpg",
+    image: "/images/academy/training10.jpg",
     pdf: "/pdfs/sample.pdf"
   },
   {
     title: "Digital Healthcare Standards",
     type: "Online",
     location: "Virtual",
-    image: "/images/events/internationalhero.jpg",
+    image: "/images/academy/training111.jpg",
     pdf: "/pdfs/sample.pdf"
   },
   {
     title: "Sterile Processing Certification",
     type: "Self",
     location: "Self Paced",
-    image: "/images/events/annual.jpg",
+    image: "/images/academy/training12.jpg",
     pdf: "/pdfs/sample.pdf"
   }
 ];

@@ -35,7 +35,7 @@ export default function Navbar() {
         { name: "Who We Are", path: "/who-we-are" },
         { name: "Objectives", path: "/objectives" },
         { name: "Leadership", path: "/leadership" },
-        { name: "Our Journey", path: "/our-journey" }, // ✅ FIXED
+        { name: "Our Journey", path: "/our-journey" },
       ],
     },
     {
@@ -55,17 +55,16 @@ export default function Navbar() {
         { name: "Academic Institution", path: "/membership/academic" },
       ],
     },
-   {
-  title: "ACADEMY",
-  links: [
-    { name: "Training Programs", path: "/academy/training" },
-    { name: "Excellence Programs", path: "/academy/excellence" },
-    { name: "Masterclass Series", path: "/academy/masterclass" },
-    { name: "Webinars", path: "/academy/webinars" },
-    { name: "International Programs", path: "/academy/international" }, // ✅ NEW
-  ],
-},
-
+    {
+      title: "ACADEMY",
+      links: [
+        { name: "Training Programs", path: "/academy/training" },
+        { name: "Excellence Programs", path: "/academy/excellence" },
+        { name: "Masterclass Series", path: "/academy/masterclass" },
+        { name: "Webinars", path: "/academy/webinars" },
+        { name: "International Programs", path: "/academy/international" },
+      ],
+    },
     {
       title: "LIBRARY",
       links: [
@@ -154,9 +153,13 @@ export default function Navbar() {
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-4">
-          <button className="hidden md:flex bg-gradient-to-r from-brandBlue to-brandRed text-white p-3 rounded-full">
-            <Search size={18} />
-          </button>
+
+          {/* ✅ SEARCH ICON CONNECTED */}
+          <Link to="/search">
+            <button className="hidden md:flex bg-gradient-to-r from-brandBlue to-brandRed text-white p-3 rounded-full">
+              <Search size={18} />
+            </button>
+          </Link>
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}

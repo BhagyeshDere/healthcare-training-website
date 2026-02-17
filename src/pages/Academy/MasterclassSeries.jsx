@@ -9,7 +9,7 @@ const masterclasses = [
     title: "Sterilization Excellence Masterclass",
     date: "Starts June 2026",
     location: "Virtual",
-    image: "/images/academy/training1.jpg",
+    image: "/images/academy/masterclass1.jpg",
     pdf: "/pdfs/sample.pdf",
     tag: "Self-Paced"
   },
@@ -17,7 +17,7 @@ const masterclasses = [
     title: "Advanced Infection Control",
     date: "July 2026",
     location: "Dubai",
-    image: "/images/events/international1.jpg",
+    image: "/images/academy/masterclass2.jpg",
     pdf: "/pdfs/sample.pdf",
     tag: "Live"
   },
@@ -25,7 +25,7 @@ const masterclasses = [
     title: "Hospital Quality Leadership",
     date: "August 2026",
     location: "Singapore",
-    image: "/images/events/annual1.jpg",
+    image: "/images/academy/masterclass3.jpg",
     pdf: "/pdfs/sample.pdf",
     tag: "Hybrid"
   },
@@ -36,7 +36,7 @@ const masterclasses = [
     title: "CSSD Best Practices",
     date: "September 2026",
     location: "Virtual",
-    image: "/images/events/part1.jpg",
+    image: "/images/academy/masterclass4.jpg",
     pdf: "/pdfs/sample.pdf",
     tag: "Self-Paced"
   },
@@ -44,7 +44,7 @@ const masterclasses = [
     title: "Patient Safety & Risk Management",
     date: "October 2026",
     location: "London",
-    image: "/images/events/international2.jpg",
+    image: "/images/academy/masterclass5.jpg",
     pdf: "/pdfs/sample.pdf",
     tag: "Live"
   },
@@ -52,7 +52,7 @@ const masterclasses = [
     title: "Healthcare Audit Mastery",
     date: "November 2026",
     location: "Singapore",
-    image: "/images/events/annual2.jpg",
+    image: "/images/academy/masterclass6.jpg",
     pdf: "/pdfs/sample.pdf",
     tag: "Hybrid"
   },
@@ -68,7 +68,7 @@ const masterclasses = [
     title: "Infection Prevention Pro",
     date: "January 2027",
     location: "Dubai",
-    image: "/images/events/part3.jpg",
+    image: "/images/academy/masterclass8.jpg",
     pdf: "/pdfs/sample.pdf",
     tag: "Live"
   },
@@ -107,9 +107,8 @@ const [activePdf,setActivePdf] = useState(null);
   >
     <h1 className="
       text-5xl md:text-7xl font-extrabold
-      bg-gradient-to-r from-blue-400 to-red-400
-      bg-clip-text text-transparent
-      drop-shadow-[0_5px_25px_rgba(0,0,0,0.8)]
+      text-white
+      drop-shadow-[0_5px_25px_rgba(0,0,0,0.9)]
     ">
       VIDA Masterclass Series
     </h1>

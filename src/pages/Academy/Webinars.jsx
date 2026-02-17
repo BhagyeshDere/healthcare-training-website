@@ -11,14 +11,14 @@ export default function Webinars() {
       title: "Medication Safety & Clinical Risk",
       date: "21 Feb 2026",
       time: "3:30 PM IST",
-      image: "/images/events/international1.jpg",
+      image: "/images/academy/webinar1.jpg",
       pdf: "/pdfs/sample.pdf",
     },
     {
       title: "Advanced Infection Prevention",
       date: "10 Mar 2026",
       time: "5:00 PM IST",
-      image: "/images/events/annual1.jpg",
+      image: "/images/academy/webinar2.jpg",
       pdf: "/pdfs/sample.pdf",
     },
   ];
@@ -28,7 +28,7 @@ export default function Webinars() {
       title: "Sterilization Quality Benchmarking",
       date: "15 Jan 2025",
       time: "4:00 PM IST",
-      image: "/images/events/annual2.jpg",
+      image: "/images/academy/webinar3.jpg",
       pdf: "/pdfs/sample.pdf",
     },
   ];

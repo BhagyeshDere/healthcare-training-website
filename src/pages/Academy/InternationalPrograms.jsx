@@ -11,7 +11,7 @@ export default function InternationalPrograms() {
       duration: "6 Months",
       location: "Virtual (Global)",
       enrolled: "180+ Professionals",
-      image: "/images/academy/excellence1.jpg",
+      image: "/images/academy/international1.jpg",
       pdf: "/pdfs/sample.pdf",
       tag: "International"
     },
@@ -20,7 +20,7 @@ export default function InternationalPrograms() {
       duration: "4–6 Months",
       location: "Europe & Asia",
       enrolled: "95+ Professionals",
-      image: "/images/academy/excellence2.jpg",
+      image: "/images/academy/international2.jpg",
       pdf: "/pdfs/sample.pdf",
       tag: "Fellowship"
     },
@@ -29,7 +29,7 @@ export default function InternationalPrograms() {
       duration: "1 Year",
       location: "Global Virtual",
       enrolled: "210+ Professionals",
-      image: "/images/academy/excellence3.jpg",
+      image: "/images/academy/international3.jpg",
       pdf: "/pdfs/sample.pdf",
       tag: "Certification"
     }
