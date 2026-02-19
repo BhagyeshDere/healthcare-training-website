@@ -224,6 +224,143 @@ export default function WhoWeAre() {
   </div>
 </section>
 
+{/* ================= FOUNDATION OVERVIEW ================= */}
+<section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+
+  {/* background glow */}
+  <div className="absolute -top-20 left-0 w-80 h-80 bg-blue-200/30 blur-3xl rounded-full"/>
+  <div className="absolute bottom-0 right-0 w-80 h-80 bg-red-200/30 blur-3xl rounded-full"/>
+
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6"
+  >
+
+    <div className="text-center max-w-3xl mx-auto mb-14">
+      <span className="inline-block px-5 py-2 rounded-full bg-blue-100 text-blue-700 text-xs sm:text-sm font-semibold">
+        Foundation Overview
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-6">
+        About{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-red-500">
+          VIDA Foundation
+        </span>
+      </h2>
+    </div>
+
+    {/* FULL PARAGRAPH */}
+    <p className="text-gray-700 text-base sm:text-lg leading-relaxed max-w-5xl mx-auto text-center">
+      VIDA (Valuable Inputs Development Academy) Foundation is a purpose-driven
+      educational and training foundation dedicated to delivering high-quality,
+      customized knowledge solutions across multiple domains, with a strong
+      and specialized focus on healthcare education, patient safety, and
+      infection prevention.
+    </p>
+
+  </motion.div>
+</section>
+
+{/* ================= COMPANY HISTORY ================= */}
+<section className="relative py-20 md:py-28 bg-white">
+
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    className="max-w-7xl mx-auto px-4 sm:px-6"
+  >
+
+    <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+
+      {/* HISTORY */}
+      <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-blue-50 to-white border shadow-lg">
+        <h3 className="text-2xl sm:text-3xl font-bold text-blue-700 mb-5">
+          Company History
+        </h3>
+
+        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+          VIDA Foundation emerged from extensive experience in healthcare
+          training, infection control, quality management, and academic mentoring.
+          A recurring lack of updated, practical, and standardized training —
+          particularly in healthcare — led to the formation of VIDA Foundation
+          as a structured learning and capacity-building platform.
+        </p>
+      </div>
+
+      {/* VISION */}
+      <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-red-50 to-white border shadow-lg">
+        <h3 className="text-2xl sm:text-3xl font-bold text-red-600 mb-5">
+          Vision
+        </h3>
+
+        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+          To become a globally respected center of excellence for customized
+          education and professional training, driving safer healthcare systems
+          and empowered professionals.
+        </p>
+      </div>
+
+    </div>
+
+  </motion.div>
+</section>
+
+{/* ================= MISSION ================= */}
+<section className="relative py-20 md:py-28 bg-gradient-to-b from-white to-blue-50 overflow-hidden">
+
+  <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-200/30 blur-3xl rounded-full"/>
+
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6"
+  >
+
+    <div className="text-center mb-12">
+      <span className="inline-block px-5 py-2 rounded-full bg-red-100 text-red-600 text-xs sm:text-sm font-semibold">
+        Mission
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-6">
+        Our Mission
+      </h2>
+    </div>
+
+    <div className="grid sm:grid-cols-2 gap-6">
+
+      {[
+        "Deliver practical, customized, and high-impact education",
+        "Strengthen healthcare systems through infection control excellence",
+        "Promote patient safety and quality-driven practices",
+        "Enable career growth and professional confidence",
+      ].map((item, i) => (
+        <motion.div
+          key={i}
+          whileHover={{ y: -6 }}
+          className="p-6 sm:p-7 rounded-2xl bg-white shadow-lg border text-gray-700"
+        >
+          <div className="flex gap-3 items-start">
+            <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-red-500 text-white flex items-center justify-center text-xs">
+              ✓
+            </div>
+            <p className="text-sm sm:text-base leading-relaxed">{item}</p>
+          </div>
+        </motion.div>
+      ))}
+
+    </div>
+
+  </motion.div>
+</section>
+
+
 {/* ================= PURPOSE ================= */}
 <section className="relative py-20 md:py-28 overflow-hidden">
 

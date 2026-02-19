@@ -85,6 +85,112 @@ export default function JourneySection() {
 
   </div>
 </section>
+
+{/* ================= JOURNEY STORY INTRO ================= */}
+<section className="relative py-20 sm:py-24 md:py-28 overflow-hidden bg-gradient-to-b from-white to-blue-50">
+
+  {/* soft glows */}
+  <div className="absolute -top-20 left-0 w-80 h-80 bg-blue-200/30 blur-3xl rounded-full"/>
+  <div className="absolute bottom-0 right-0 w-80 h-80 bg-red-200/30 blur-3xl rounded-full"/>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+
+    {/* HEADER */}
+    <div className="text-center max-w-3xl mx-auto mb-14">
+      <span className="inline-block px-5 py-2 rounded-full bg-blue-100 text-blue-700 text-xs sm:text-sm font-semibold">
+        Our Journey Story
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-6 text-slate-800">
+        The Story Behind{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-red-500">
+          VIDA Foundation
+        </span>
+      </h2>
+    </div>
+
+    {/* STORY GRID */}
+    <div className="grid md:grid-cols-2 gap-8 md:gap-10">
+
+      {/* WHY VIDA CREATED */}
+      <motion.div
+        initial={{ opacity:0, y:40 }}
+        whileInView={{ opacity:1, y:0 }}
+        viewport={{ once:true }}
+        className="p-6 sm:p-8 rounded-2xl bg-white border shadow-lg hover:shadow-2xl transition"
+      >
+        <h3 className="text-xl sm:text-2xl font-bold text-blue-700 mb-4">
+          Why VIDA Was Created
+        </h3>
+        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+          VIDA Foundation was created to bridge the gap between academic
+          healthcare knowledge and practical real-world application. The goal
+          was to build a platform that empowers professionals with skills,
+          competency, and confidence through structured education.
+        </p>
+      </motion.div>
+
+      {/* INDUSTRY PROBLEMS */}
+      <motion.div
+        initial={{ opacity:0, y:40 }}
+        whileInView={{ opacity:1, y:0 }}
+        transition={{ delay:0.1 }}
+        viewport={{ once:true }}
+        className="p-6 sm:p-8 rounded-2xl bg-white border shadow-lg hover:shadow-2xl transition"
+      >
+        <h3 className="text-xl sm:text-2xl font-bold text-red-600 mb-4">
+          Industry Challenges
+        </h3>
+        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+          Healthcare institutions faced a lack of updated, standardized,
+          and practical training — especially in infection control,
+          sterilization, and patient safety practices. This gap inspired
+          the need for a focused capacity-building initiative.
+        </p>
+      </motion.div>
+
+      {/* FORMATION STORY */}
+      <motion.div
+        initial={{ opacity:0, y:40 }}
+        whileInView={{ opacity:1, y:0 }}
+        transition={{ delay:0.2 }}
+        viewport={{ once:true }}
+        className="p-6 sm:p-8 rounded-2xl bg-white border shadow-lg hover:shadow-2xl transition"
+      >
+        <h3 className="text-xl sm:text-2xl font-bold text-blue-700 mb-4">
+          Formation Story
+        </h3>
+        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+          Built on years of healthcare training experience, VIDA Foundation
+          emerged as a structured learning ecosystem dedicated to education,
+          infection prevention, and healthcare quality improvement — turning
+          real challenges into scalable learning solutions.
+        </p>
+      </motion.div>
+
+      {/* LEARNING EVOLUTION */}
+      <motion.div
+        initial={{ opacity:0, y:40 }}
+        whileInView={{ opacity:1, y:0 }}
+        transition={{ delay:0.3 }}
+        viewport={{ once:true }}
+        className="p-6 sm:p-8 rounded-2xl bg-white border shadow-lg hover:shadow-2xl transition"
+      >
+        <h3 className="text-xl sm:text-2xl font-bold text-red-600 mb-4">
+          Learning Evolution
+        </h3>
+        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+          From workshops and short-term certification programs to advanced
+          institutional training and research-driven learning, VIDA continues
+          evolving with modern healthcare needs and global standards.
+        </p>
+      </motion.div>
+
+    </div>
+
+  </div>
+</section>
+
 {/* ================= TIMELINE SECTION ================= */}
 <section className="relative py-20 sm:py-28 md:py-36 overflow-hidden">
 

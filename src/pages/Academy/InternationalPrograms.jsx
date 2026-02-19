@@ -69,18 +69,18 @@ export default function InternationalPrograms() {
 
       </section>
 {/* ================= INTRO ================= */}
-<section className="relative py-24 px-6 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-red-50">
+<section className="relative py-24 px-6 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
 
   {/* Soft background glows */}
-  <div className="absolute -top-20 -left-20 w-96 h-96 bg-blue-200/40 blur-3xl rounded-full"/>
-  <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-red-200/40 blur-3xl rounded-full"/>
+  <div className="absolute -top-20 -left-20 w-96 h-96 bg-blue-500/20 blur-3xl rounded-full"/>
+  <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-red-500/20 blur-3xl rounded-full"/>
 
   <div className="relative max-w-5xl mx-auto text-center">
 
     {/* Heading */}
     <h2 className="
       text-4xl md:text-5xl font-extrabold
-      bg-gradient-to-r from-blue-700 to-red-500
+      bg-gradient-to-r from-blue-300 to-red-300
       bg-clip-text text-transparent
       leading-tight
     ">
@@ -88,14 +88,14 @@ export default function InternationalPrograms() {
     </h2>
 
     {/* Divider */}
-    <div className="w-24 h-1 mx-auto mt-6 bg-gradient-to-r from-blue-600 to-red-500 rounded-full"/>
+    <div className="w-24 h-1 mx-auto mt-6 bg-gradient-to-r from-blue-500 to-red-400 rounded-full"/>
 
-    {/* DARK GLASS CARD */}
+    {/* LIGHT PREMIUM CARD */}
     <div className="
       mt-12
-      bg-slate-900/90
+      bg-white/95
       backdrop-blur-xl
-      border border-white/10
+      border border-gray-200
       shadow-[0_25px_80px_rgba(0,0,0,0.35)]
       rounded-3xl
       p-8 md:p-12
@@ -103,7 +103,7 @@ export default function InternationalPrograms() {
       transition duration-500
     ">
 
-      <p className="text-gray-200 text-lg leading-relaxed">
+      <p className="text-gray-700 text-lg leading-relaxed">
         VIDA Life Sciences collaborates with international experts
         and institutions to deliver globally relevant healthcare
         education. Our international programs focus on sterilization,
@@ -112,6 +112,106 @@ export default function InternationalPrograms() {
         Participants gain world-class knowledge, practical insights,
         and internationally valued certifications.
       </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+{/* ================= GLOBAL STANDARDS ================= */}
+<section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-white via-blue-50 to-red-50 text-slate-900">
+
+  {/* glow accents */}
+  <div className="absolute -top-20 left-0 w-80 h-80 bg-blue-200/30 blur-3xl rounded-full"/>
+  <div className="absolute bottom-0 right-0 w-80 h-80 bg-red-200/30 blur-3xl rounded-full"/>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+
+    {/* HEADER */}
+    <div className="text-center max-w-4xl mx-auto mb-14">
+
+      <span className="inline-block px-5 py-2 rounded-full bg-blue-100 text-blue-700 text-xs sm:text-sm tracking-wide font-semibold">
+        International Excellence
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-6 text-slate-900">
+        Global Standards & International Compliance
+      </h2>
+
+      <p className="mt-5 text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed">
+        VIDA International Programs are designed to align healthcare professionals
+        with globally recognized standards and compliance frameworks, ensuring
+        safe, effective and future-ready healthcare systems worldwide.
+      </p>
+
+    </div>
+
+    {/* CARDS (DARK STYLE KEPT) */}
+    <div className="grid md:grid-cols-2 gap-8 md:gap-10">
+
+      {/* GLOBAL STANDARDS */}
+      <motion.div
+        initial={{opacity:0,y:30}}
+        whileInView={{opacity:1,y:0}}
+        viewport={{once:true}}
+        whileHover={{y:-8}}
+        className="
+          p-7 sm:p-9
+          rounded-3xl
+          bg-slate-900
+          text-white
+          border border-slate-700
+          shadow-xl
+          hover:shadow-2xl
+          transition
+        "
+      >
+        <h3 className="text-2xl sm:text-3xl font-bold text-blue-300 mb-4">
+          Global Standards
+        </h3>
+
+        <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+          Programs are built around globally accepted healthcare frameworks,
+          infection prevention guidelines, sterilization science, and clinical
+          quality benchmarks — preparing professionals to work confidently in
+          international healthcare environments.
+        </p>
+
+        <div className="mt-6 h-[3px] w-24 bg-gradient-to-r from-blue-500 to-red-500 rounded-full"/>
+      </motion.div>
+
+      {/* INTERNATIONAL COMPLIANCE */}
+      <motion.div
+        initial={{opacity:0,y:30}}
+        whileInView={{opacity:1,y:0}}
+        transition={{delay:0.1}}
+        viewport={{once:true}}
+        whileHover={{y:-8}}
+        className="
+          p-7 sm:p-9
+          rounded-3xl
+          bg-slate-900
+          text-white
+          border border-slate-700
+          shadow-xl
+          hover:shadow-2xl
+          transition
+        "
+      >
+        <h3 className="text-2xl sm:text-3xl font-bold text-red-300 mb-4">
+          International Compliance
+        </h3>
+
+        <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+          VIDA training emphasizes compliance with international healthcare
+          regulations, accreditation standards, and patient safety protocols —
+          helping hospitals and professionals achieve consistent quality across
+          borders.
+        </p>
+
+        <div className="mt-6 h-[3px] w-24 bg-gradient-to-r from-red-500 to-blue-500 rounded-full"/>
+      </motion.div>
 
     </div>
 

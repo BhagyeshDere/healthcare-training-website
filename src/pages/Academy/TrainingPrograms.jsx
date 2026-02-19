@@ -120,7 +120,7 @@ const [search, setSearch] = useState("");
 <section className="relative h-[75vh] md:h-[85vh] flex items-center justify-center text-center overflow-hidden">
 
   <img
-    src="/images/academy/training1.jpg"
+    src="/images/academy/traininghero.jpg"
     className="absolute inset-0 w-full h-full object-cover"
     alt=""
   />
@@ -141,7 +141,223 @@ const [search, setSearch] = useState("");
   </div>
 
 </section>
+{/* ================= FLAGSHIP DRIVE ================= */}
+<section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white">
 
+  {/* background glows */}
+  <div className="absolute -top-24 left-0 w-[420px] h-[420px] bg-blue-500/20 blur-[120px] rounded-full"/>
+  <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-red-500/20 blur-[120px] rounded-full"/>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+
+    {/* HEADER */}
+    <div className="text-center max-w-4xl mx-auto mb-16">
+
+      <span className="
+        inline-block px-5 py-2
+        rounded-full
+        bg-white/10 backdrop-blur-md
+        border border-white/20
+        text-blue-200
+        text-xs sm:text-sm
+        tracking-widest
+        uppercase
+        shadow-md
+      ">
+        Flagship Drive
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-6 leading-tight">
+        Voice for Infection Control & Prevention
+      </h2>
+
+      <p className="mt-6 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+        A socially responsible initiative dedicated to reducing healthcare-associated
+        infections and strengthening patient safety through awareness, education,
+        professional training, and standardized healthcare practices.
+      </p>
+    </div>
+
+    {/* PURPOSE / IMPACT / BENEFITS */}
+    <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-20">
+
+      {[
+        {
+          title:"Purpose",
+          text:"To empower healthcare professionals with updated knowledge, practical skills, and infection prevention standards that improve care quality and hospital safety."
+        },
+        {
+          title:"Impact",
+          text:"Supports hospitals in reducing infection risks, improving compliance, and establishing structured sterilization and quality systems."
+        },
+        {
+          title:"Benefits",
+          text:"Enhances clinical confidence, promotes patient safety culture, improves operational efficiency, and ensures global healthcare compliance."
+        }
+      ].map((item,i)=>(
+
+        <motion.div
+          key={i}
+          initial={{opacity:0,y:30}}
+          whileInView={{opacity:1,y:0}}
+          viewport={{once:true}}
+          whileHover={{y:-8}}
+          className="
+            group relative
+            p-[2px]
+            rounded-2xl
+            bg-gradient-to-br from-blue-500/40 to-red-500/40
+            hover:from-blue-500 hover:to-red-500
+            transition
+          "
+        >
+
+          <div className="
+            h-full rounded-2xl
+            bg-white/5 backdrop-blur-xl
+            border border-white/10
+            p-6 sm:p-8
+            shadow-lg
+            group-hover:shadow-2xl
+            transition
+          ">
+
+            <h3 className="text-xl font-bold text-blue-300 mb-4">
+              {item.title}
+            </h3>
+
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+              {item.text}
+            </p>
+
+            <div className="mt-5 h-[2px] w-16 bg-gradient-to-r from-blue-500 to-red-500 rounded-full group-hover:w-28 transition-all duration-300"/>
+
+          </div>
+
+        </motion.div>
+      ))}
+
+    </div>
+
+    {/* KEY FOCUS AREAS */}
+    <div className="text-center mb-12">
+      <h3 className="text-2xl sm:text-3xl font-bold">
+        Key Focus Areas
+      </h3>
+    </div>
+<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+  {[
+    {
+      title:"Infection Prevention & Control (IPC)",
+      text:"Promoting evidence-based infection prevention strategies and hospital hygiene protocols.",
+      image:"/images/academy/training01.jpg",
+    },
+    {
+      title:"HAI Reduction",
+      text:"Reducing hospital-acquired infections through standardized workflows and awareness.",
+      image:"/images/academy/training22.jpg",
+    },
+    {
+      title:"Sterilization Standards",
+      text:"Improving CSSD practices, sterilization validation, and equipment handling accuracy.",
+      image:"/images/academy/training33.jpg",
+    },
+    {
+      title:"Biomedical Waste Management",
+      text:"Ensuring safe segregation, handling, and disposal aligned with healthcare regulations.",
+      image:"/images/academy/training44.jpg",
+    },
+    {
+      title:"Patient Safety",
+      text:"Embedding quality indicators and safe care practices to reduce risks and improve outcomes.",
+      image:"/images/academy/training55.jpg",
+    },
+    {
+      title:"Compliance Standards",
+      text:"Aligning hospitals with national and international healthcare quality and accreditation standards.",
+      image:"/images/academy/training66.jpg",
+    },
+  ].map((item,i)=>(
+
+    <motion.div
+      key={i}
+      initial={{opacity:0,y:30}}
+      whileInView={{opacity:1,y:0}}
+      viewport={{once:true}}
+      whileHover={{y:-8}}
+      className="
+        group
+        relative
+        overflow-hidden
+        rounded-2xl
+        bg-white
+        border border-gray-200
+        shadow-lg
+        hover:shadow-2xl
+        transition
+      "
+    >
+
+      {/* IMAGE */}
+      <div className="relative h-52 sm:h-56 overflow-hidden">
+
+        <img
+          src={item.image}
+          alt={item.title}
+          className="
+            w-full h-full object-cover
+            group-hover:scale-110
+            transition duration-700
+          "
+        />
+
+        {/* light overlay */}
+        <div className="
+          absolute inset-0
+          bg-gradient-to-t from-black/50 via-transparent to-transparent
+        "/>
+
+      </div>
+
+      {/* CONTENT */}
+      <div className="p-6 sm:p-7">
+
+        <h4 className="
+          text-lg sm:text-xl
+          font-bold
+          text-slate-800
+          mb-3
+          group-hover:text-blue-700
+          transition
+        ">
+          {item.title}
+        </h4>
+
+        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+          {item.text}
+        </p>
+
+        {/* premium accent */}
+        <div className="
+          mt-5 h-[3px] w-16
+          bg-gradient-to-r from-blue-500 to-red-500
+          rounded-full
+          group-hover:w-28
+          transition-all duration-300
+        "/>
+
+      </div>
+
+    </motion.div>
+  ))}
+
+</div>
+
+
+
+  </div>
+</section>
 
       {/* ================= FILTER BAR ================= */}
       <section className="py-10 px-6 bg-slate-900 sticky top-0 z-20">

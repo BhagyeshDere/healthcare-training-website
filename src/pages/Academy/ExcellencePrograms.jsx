@@ -100,7 +100,102 @@ export default function ExcellencePrograms() {
   </div>
 
 </section>
+{/* ================= ADVANCED & SPECIALIZED PROGRAMS ================= */}
+<section className="relative py-20 md:py-28 overflow-hidden bg-slate-950 text-white">
 
+  {/* glow accents */}
+  <div className="absolute -top-20 left-0 w-80 h-80 bg-blue-500/20 blur-3xl rounded-full"/>
+  <div className="absolute bottom-0 right-0 w-80 h-80 bg-red-500/20 blur-3xl rounded-full"/>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+
+    {/* SECTION HEADER */}
+    <div className="text-center max-w-4xl mx-auto mb-14">
+      <span className="inline-block px-5 py-2 rounded-full bg-white/10 border border-white/20 text-blue-200 text-xs sm:text-sm tracking-wide">
+        Excellence Programs
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-6">
+        Advanced & Specialized Healthcare Education
+      </h2>
+
+      <p className="mt-5 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
+        VIDA Excellence Programs extend beyond evaluation frameworks — delivering
+        advanced professional programs and specialized healthcare education to
+        build future-ready hospitals and expert clinical teams.
+      </p>
+    </div>
+
+    {/* CARDS */}
+    <div className="grid md:grid-cols-2 gap-8 md:gap-10">
+
+      {/* ADVANCED PROGRAMS */}
+      <motion.div
+        initial={{opacity:0,y:30}}
+        whileInView={{opacity:1,y:0}}
+        viewport={{once:true}}
+        whileHover={{y:-8}}
+        className="
+          p-7 sm:p-9
+          rounded-3xl
+          bg-white/10
+          backdrop-blur-xl
+          border border-white/10
+          hover:bg-white/15
+          transition
+          shadow-xl
+        "
+      >
+        <h3 className="text-2xl sm:text-3xl font-bold text-blue-300 mb-4">
+          Advanced Programs
+        </h3>
+
+        <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+          Advanced programs are designed for healthcare leaders, senior clinicians,
+          and hospital quality teams. These programs focus on high-level clinical
+          decision-making, leadership in quality management, sterilization science,
+          and sustainable healthcare excellence.
+        </p>
+
+        <div className="mt-6 h-[3px] w-24 bg-gradient-to-r from-blue-500 to-red-500 rounded-full"/>
+      </motion.div>
+
+      {/* SPECIALIZED HEALTHCARE EDUCATION */}
+      <motion.div
+        initial={{opacity:0,y:30}}
+        whileInView={{opacity:1,y:0}}
+        transition={{delay:0.1}}
+        viewport={{once:true}}
+        whileHover={{y:-8}}
+        className="
+          p-7 sm:p-9
+          rounded-3xl
+          bg-white/10
+          backdrop-blur-xl
+          border border-white/10
+          hover:bg-white/15
+          transition
+          shadow-xl
+        "
+      >
+        <h3 className="text-2xl sm:text-3xl font-bold text-red-300 mb-4">
+          Specialized Healthcare Education
+        </h3>
+
+        <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+          Specialized healthcare education addresses focused areas such as infection
+          prevention, patient safety, compliance standards, endoscopy safety, and
+          advanced sterilization workflows — helping healthcare professionals adopt
+          best practices aligned with international benchmarks.
+        </p>
+
+        <div className="mt-6 h-[3px] w-24 bg-gradient-to-r from-red-500 to-blue-500 rounded-full"/>
+      </motion.div>
+
+    </div>
+
+  </div>
+</section>
 
 
       {/* ================= IMPACT STATS ================= */}

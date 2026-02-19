@@ -10,7 +10,8 @@ import LibrarySection from "../components/home/LibrarySection";
 import VidaAwardsSection from "../components/home/VidaAwardsSection";
 import VidaResourcesSection from "../components/home/VidaResourcesSection";
 import VidaConnectSection from "../components/home/VidaConnectSection";
-
+import FlagshipSection from "../components/home/FlagshipSection";
+import ProgramsPreview from "../components/home/ProgramsPreview";
 
 /* PREMIUM ANIMATION VARIANTS */
 const sectionVariant = {
@@ -62,39 +63,58 @@ export default function Home() {
         <HeroSlider />
       </div>
 
+      {/* ABOUT INTRO */}
       <MotionSection>
         <AboutStats />
       </MotionSection>
 
+      {/* ENGAGEMENT VIDEO */}
       <MotionSection>
         <IntroVideo />
       </MotionSection>
 
+      {/* FLAGSHIP INITIATIVE */}
       <MotionSection>
-        <ProgramsMembership />
+        <FlagshipSection />
       </MotionSection>
 
+      {/* PROGRAMS PREVIEW */}
+      <MotionSection>
+        <ProgramsPreview />
+      </MotionSection>
+
+      {/* ACADEMY */}
       <MotionSection>
         <VidaAcademy />
       </MotionSection>
 
+      {/* PROGRAMS & MEMBERSHIP */}
+      <MotionSection>
+        <ProgramsMembership />
+      </MotionSection>
+
+      {/* EVENTS */}
       <MotionSection>
         <EventsSection />
       </MotionSection>
 
+      {/* RESOURCES */}
       <MotionSection>
         <LibrarySection />
-      </MotionSection>
-
-      <MotionSection>
-        <VidaAwardsSection />
       </MotionSection>
 
       <MotionSection>
         <VidaResourcesSection />
       </MotionSection>
 
-      {/* VIDA CONNECT / COLLAB SECTION */}
+      {/* TRUST BUILDERS */}
+      <MotionSection>
+        <VidaAwardsSection />
+      </MotionSection>
+
+      
+
+      {/* FINAL CTA */}
       <MotionSection>
         <VidaConnectSection />
       </MotionSection>

@@ -172,6 +172,164 @@ export default function Objectives() {
 
 </section>
 
+{/* ================= CORE VALUES ================= */}
+<section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-white via-blue-50 to-white">
+
+  {/* background glow */}
+  <div className="absolute -top-20 left-0 w-80 h-80 bg-blue-200/30 blur-3xl rounded-full"/>
+  <div className="absolute bottom-0 right-0 w-80 h-80 bg-red-200/30 blur-3xl rounded-full"/>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+
+    {/* HEADER */}
+    <div className="text-center max-w-3xl mx-auto mb-14">
+
+      <span className="
+        inline-block px-5 py-2
+        rounded-full
+        bg-blue-100
+        text-blue-700
+        text-xs sm:text-sm font-semibold
+        shadow-sm
+      ">
+        Core Values
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-6 leading-tight">
+        The Values That{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-red-500">
+          Guide VIDA
+        </span>
+      </h2>
+
+      <p className="mt-4 text-gray-600 text-sm sm:text-base">
+        Principles that shape our commitment to healthcare education, quality,
+        and professional excellence.
+      </p>
+
+    </div>
+
+    {/* VALUES GRID */}
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+      {[
+        "Integrity & Ethics",
+        "Excellence in Education",
+        "Accessibility & Inclusivity",
+        "Innovation in Learning",
+        "Social Responsibility",
+      ].map((value, i) => (
+        <motion.div
+          key={i}
+          whileHover={{ y: -10 }}
+          transition={{ duration: 0.3 }}
+          className="
+            group
+            relative
+            p-[2px]
+            rounded-2xl
+            bg-gradient-to-br from-blue-400/40 to-red-400/40
+            hover:from-blue-600 hover:to-red-500
+            transition
+          "
+        >
+
+          {/* inner glass card */}
+          <div className="
+            h-full
+            rounded-2xl
+            bg-white/80
+            backdrop-blur-xl
+            border border-white/60
+            p-6 sm:p-8
+            shadow-lg
+            group-hover:shadow-2xl
+            transition
+          ">
+
+            {/* icon number */}
+            <div className="
+              w-11 h-11 mb-5
+              rounded-xl
+              bg-gradient-to-r from-blue-600 to-red-500
+              text-white
+              flex items-center justify-center
+              font-bold text-sm
+              shadow-md
+              group-hover:scale-110
+              transition
+            ">
+              {i + 1}
+            </div>
+
+            {/* title */}
+            <h3 className="
+              text-lg sm:text-xl
+              font-bold
+              text-gray-800
+              leading-snug
+              group-hover:text-blue-700
+              transition
+            ">
+              {value}
+            </h3>
+
+            {/* subtle accent line */}
+            <div className="
+              mt-5 h-[3px] w-16
+              bg-gradient-to-r from-blue-500 to-red-500
+              rounded-full
+              group-hover:w-24
+              transition-all duration-300
+            "/>
+
+          </div>
+
+        </motion.div>
+      ))}
+
+    </div>
+
+  </div>
+</section>
+
+{/* ================= GROWTH STRATEGY ================= */}
+<section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-white to-blue-50">
+
+  {/* background glow */}
+  <div className="absolute -top-20 left-0 w-80 h-80 bg-blue-200/30 blur-3xl rounded-full"/>
+  <div className="absolute bottom-0 right-0 w-80 h-80 bg-red-200/30 blur-3xl rounded-full"/>
+
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center"
+  >
+
+    <span className="inline-block px-6 py-2 mb-6 text-xs sm:text-sm rounded-full bg-blue-100 text-blue-700 font-semibold">
+      Growth Strategy
+    </span>
+
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">
+      Building the Future of{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-red-500">
+        Healthcare Education
+      </span>
+    </h2>
+
+    <p className="mt-6 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
+      VIDA Foundation aims to grow through strategic partnerships with hospitals,
+      colleges, and institutions, digital learning platforms, multilingual course
+      offerings, expert faculty networks, and continuous alignment of educational
+      content with global healthcare and patient safety standards. Our growth
+      strategy focuses on sustainable impact, scalable knowledge delivery, and
+      empowering professionals to meet future healthcare challenges.
+    </p>
+
+  </motion.div>
+</section>
 
 {/* ================= CERTIFICATES ================= */}
 <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-blue-950 via-slate-900 to-blue-950">

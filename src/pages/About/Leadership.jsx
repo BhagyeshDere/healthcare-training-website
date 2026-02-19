@@ -152,6 +152,70 @@ export default function LeadershipPage() {
 </section>
 
 
+{/* ================= NEW : EDUCATION & ACADEMIC LEADERSHIP ================= */}
+<section className="relative py-24 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+
+  {/* glow */}
+  <div className="absolute -top-20 left-0 w-80 h-80 bg-blue-500/20 blur-3xl rounded-full"/>
+  <div className="absolute bottom-0 right-0 w-80 h-80 bg-red-500/20 blur-3xl rounded-full"/>
+
+  <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+
+    <motion.div
+      initial={{opacity:0,y:40}}
+      whileInView={{opacity:1,y:0}}
+      viewport={{once:true}}
+      transition={{duration:0.8}}
+    >
+
+      <span className="inline-block px-6 py-2 rounded-full bg-white/10 border border-white/20 text-blue-200 text-sm">
+        Academic Leadership
+      </span>
+
+      <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-red-400 bg-clip-text text-transparent">
+        Education & Academic Excellence
+      </h2>
+
+      <p className="mt-6 text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto">
+        VIDA leadership combines healthcare expertise with strong academic vision —
+        bridging professional education, practical learning, and institutional collaboration.
+        Our academic approach ensures that programs remain evidence-based,
+        industry-aligned, and focused on long-term professional growth.
+      </p>
+
+    </motion.div>
+
+    {/* academic highlights */}
+    <div className="mt-14 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+      {[
+        "Academic Mentorship",
+        "Curriculum Innovation",
+        "Industry–Academia Integration"
+      ].map((item,i)=>(
+        <motion.div
+          key={i}
+          initial={{opacity:0,y:20}}
+          whileInView={{opacity:1,y:0}}
+          viewport={{once:true}}
+          transition={{delay:i*0.15}}
+          className="
+            p-6 rounded-2xl
+            bg-white/5 backdrop-blur-xl
+            border border-white/10
+            hover:bg-white/10
+            transition
+          "
+        >
+          <p className="font-semibold text-blue-200">{item}</p>
+        </motion.div>
+      ))}
+
+    </div>
+
+  </div>
+</section>
+
 {/* ================= LEADERS ================= */}
 <section className="max-w-7xl mx-auto px-6 pb-28">
 

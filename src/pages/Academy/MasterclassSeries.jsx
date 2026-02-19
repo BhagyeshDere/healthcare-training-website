@@ -171,6 +171,154 @@ const [activePdf,setActivePdf] = useState(null);
 
   </div>
 </section>
+{/* ================= EXPERT SESSIONS + ADVANCED MODULES ================= */}
+<section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white">
+
+  {/* glow background */}
+  <div className="absolute -top-28 left-0 w-[420px] h-[420px] bg-blue-500/20 blur-[120px] rounded-full"/>
+  <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-red-500/20 blur-[120px] rounded-full"/>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+
+    {/* HEADER */}
+    <div className="text-center max-w-4xl mx-auto mb-16">
+
+      <span className="
+        inline-block px-5 py-2
+        rounded-full
+        bg-white/10 backdrop-blur-md
+        border border-white/20
+        text-blue-200
+        text-xs sm:text-sm
+        tracking-widest uppercase
+        shadow-lg
+      ">
+        Masterclass Experience
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-6 leading-tight">
+        Expert Sessions & Advanced Modules
+      </h2>
+
+      <p className="mt-6 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+        Designed for healthcare leaders and advanced professionals, VIDA
+        Masterclasses combine expert-led sessions with high-value modules
+        that focus on real-world application, compliance, and innovation.
+      </p>
+
+    </div>
+
+    {/* CARDS */}
+    <div className="grid md:grid-cols-2 gap-8 md:gap-10">
+
+      {/* EXPERT SESSIONS */}
+      <motion.div
+        initial={{opacity:0,y:30}}
+        whileInView={{opacity:1,y:0}}
+        viewport={{once:true}}
+        whileHover={{y:-10}}
+        className="
+          group relative
+          p-[2px]
+          rounded-3xl
+          bg-gradient-to-br from-blue-500/40 to-red-500/40
+          hover:from-blue-500 hover:to-red-500
+          transition
+        "
+      >
+
+        <div className="
+          h-full
+          p-7 sm:p-9
+          rounded-3xl
+          bg-white/[0.05]
+          backdrop-blur-2xl
+          border border-white/10
+          shadow-[0_15px_40px_rgba(0,0,0,0.35)]
+          group-hover:shadow-[0_25px_60px_rgba(0,0,0,0.55)]
+          transition
+        ">
+
+          <h3 className="text-2xl sm:text-3xl font-bold text-blue-300 mb-4 group-hover:text-white transition">
+            Expert Sessions
+          </h3>
+
+          <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+            Learn directly from industry experts, senior healthcare consultants,
+            and infection control specialists through interactive sessions that
+            focus on practical decision-making, real hospital scenarios, and
+            modern healthcare challenges.
+          </p>
+
+          <div className="
+            mt-6 h-[3px] w-24
+            bg-gradient-to-r from-blue-500 to-red-500
+            rounded-full
+            group-hover:w-36
+            transition-all duration-300
+          "/>
+
+        </div>
+
+      </motion.div>
+
+      {/* ADVANCED MODULES */}
+      <motion.div
+        initial={{opacity:0,y:30}}
+        whileInView={{opacity:1,y:0}}
+        transition={{delay:0.1}}
+        viewport={{once:true}}
+        whileHover={{y:-10}}
+        className="
+          group relative
+          p-[2px]
+          rounded-3xl
+          bg-gradient-to-br from-red-500/40 to-blue-500/40
+          hover:from-red-500 hover:to-blue-500
+          transition
+        "
+      >
+
+        <div className="
+          h-full
+          p-7 sm:p-9
+          rounded-3xl
+          bg-white/[0.05]
+          backdrop-blur-2xl
+          border border-white/10
+          shadow-[0_15px_40px_rgba(0,0,0,0.35)]
+          group-hover:shadow-[0_25px_60px_rgba(0,0,0,0.55)]
+          transition
+        ">
+
+          <h3 className="text-2xl sm:text-3xl font-bold text-red-300 mb-4 group-hover:text-white transition">
+            Advanced Modules
+          </h3>
+
+          <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+            Structured advanced modules provide deep knowledge in sterilization
+            science, infection prevention strategies, compliance standards,
+            leadership development, and quality improvement frameworks —
+            helping professionals grow beyond fundamentals.
+          </p>
+
+          <div className="
+            mt-6 h-[3px] w-24
+            bg-gradient-to-r from-red-500 to-blue-500
+            rounded-full
+            group-hover:w-36
+            transition-all duration-300
+          "/>
+
+        </div>
+
+      </motion.div>
+
+    </div>
+
+  </div>
+</section>
+
 
 {/* ================= SEARCH BAR ================= */}
 <section className="py-12 px-6 bg-slate-900">
